@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Ocorrência</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpg" alt="EyesEverywhere">
+            </a>
+        
+        </div>
+        <nav>
+            <ul>
+                <li><a href="sobre.html">SOBRE NÓS</a></li>
+                <li><a href="comooperamos.html">COMO OPERAMOS</a></li>
+                <li><a href="ocorrencias.html">OCORRÊNCIAS</a></li>
+                <li><a href="contactos.html">CONTACTOS</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
+        </div>
+    </header>
+    
+    <h2>Formulário de Ocorrência</h2>
+    <form action="submit.html" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="senha">Palavra Passe:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <label for="tipo">Tipo de Ocorrência:</label>
+        <select id="tipo" name="tipo">
+            <option value="Obstruções na Via Pública">Obstruções na Via Pública</option>
+            <option value="Postes caídos ou inclinados">Postes caídos ou inclinados</option>
+            <option value="Esgoto a céu aberto">Esgoto a céu aberto</option>
+            <option value="Buracos na Via Pública">Buracos na Via Pública</option>
+            <option value="Falhas no Passeio">Falhas no Passeio</option>
+            <option value="Sinalização">Sinalização</option>
+        </select>
+
+        <label for="morada">Morada:</label>
+        <input type="text" id="morada" name="morada">
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade">
+
+        <label for="codigo_postal">Código Postal (Opcional):</label>
+        <input type="text" id="codigo_postal" name="codigo_postal">
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data">
+
+        <label for="inicio">Início:</label>
+        <input type="time" id="inicio" name="inicio">
+
+        <label for="fim">Fim:</label>
+        <input type="time" id="fim" name="fim">
+
+        <label for="informacoes">Informações Extras:</label>
+        <textarea id="informacoes" name="informacoes"></textarea>
+
+        <button type="submit">Salvar</button>
+    </form>
+
+    <script>
+        // Capturar o parâmetro da URL e definir o tipo de ocorrência no formulário
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const tipoOcorrencia = params.get("tipo");
+            if (tipoOcorrencia) {
+                document.getElementById("tipo").value = tipoOcorrencia;
+            }
+        };
+    </script>
+</body>
+</html>
