@@ -63,3 +63,17 @@ footer {
     margin: 0 auto;
     padding-top: 20px;
 }
+
+.footer-section p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #666;
+}
+
+.footer-section img {
+    width: 20px;  /* Ajuste o tamanho do ícone */
+    height: auto;
+    margin-right: 8px;  /* Espaço entre o ícone e o texto */
+}
