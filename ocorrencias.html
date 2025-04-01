@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EyesEverywhere</title>
-    <link rel="stylesheet" href="stylesfundopagina.css">
+    <title>Ocorrências</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesocorrencias.css">
 </head>
 <body>
-    <header>
+
+    <header class="d-flex justify-content-between align-items-center p-3 bg-light shadow">
         <div class="logo">
             <a href="index.html">
                 <img src="logo.jpg" alt="EyesEverywhere">
@@ -27,37 +29,72 @@
         </div>
     </header>
 
-    <div class="container">
-        <h2>ESCOLHER TIPO DE OCORRÊNCIA</h2>
-        <div class="container">
-            <a href="formulario.html?tipo=Obstruções na Via Pública" class="card">
-                <img src="obstrucoes.png" alt="Obstruções na Via Pública">
-                <p>Obstruções na Via Pública</p>
-            </a>
-            <a href="formulario.html?tipo=Postes caídos ou inclinados" class="card">
-                <img src="postes.png" alt="Postes caídos ou inclinados">
-                <p>Postes caídos ou inclinados</p>
-            </a>
-            <a href="formulario.html?tipo=Esgoto a céu aberto" class="card">
-                <img src="esgoto.png" alt="Esgoto a céu aberto">
-                <p>Esgoto a céu aberto</p>
-            </a>
-            <a href="formulario.html?tipo=Buracos na Via Pública" class="card">
-                <img src="buracos.png" alt="Buracos na Via Pública">
-                <p>Buracos na Via Pública</p>
-            </a>
-            <a href="formulario.html?tipo=Falhas no Passeio" class="card">
-                <img src="falhas.png" alt="Falhas no Passeio">
-                <p>Falhas no Passeio</p>
-            </a>
-            <a href="formulario.html?tipo=Sinalização" class="card">
-                <img src="sinalizacao.png" alt="Sinalização">
-                <p>Sinalização</p>
-            </a>
+    <main class="container mt-4">
+        <h2 class="text-center text-black">ESCOLHER TIPO DE OCORRÊNCIA</h2>
+        <div class="row mt-4 g-3">
+            <div class="col-md-4">
+                <a href="formulario.html?tipo=Obstruções na Via Pública" class="card ocorrencia">
+                    <img src="obstrucoes.png" class="card-img-top" alt="Obstruções na Via Pública">
+                    <div class="card-body">
+                        <p class="card-text text-center">Obstruções na Via Pública</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="formulario.html?tipo=Postes caídos ou inclinados" class="card ocorrencia">
+                    <img src="postes.png" class="card-img-top" alt="Postes caídos ou inclinados">
+                    <div class="card-body">
+                        <p class="card-text text-center">Postes caídos ou inclinados</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="formulario.html?tipo=Esgoto a céu aberto" class="card ocorrencia">
+                    <img src="esgoto.png" class="card-img-top" alt="Esgoto a céu aberto">
+                    <div class="card-body">
+                        <p class="card-text text-center">Esgoto a céu aberto</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="formulario.html?tipo=Buracos na Via Pública" class="card ocorrencia">
+                    <img src="buracos.png" class="card-img-top" alt="Buracos na Via Pública">
+                    <div class="card-body">
+                        <p class="card-text text-center">Buracos na Via Pública</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="formulario.html?tipo=Falhas no Passeio" class="card ocorrencia">
+                    <img src="falhas.png" class="card-img-top" alt="Falhas no Passeio">
+                    <div class="card-body">
+                        <p class="card-text text-center">Falhas no Passeio</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="formulario.html?tipo=Sinalização" class="card ocorrencia">
+                    <img src="sinalizacao.png" class="card-img-top" alt="Sinalização">
+                    <div class="card-body">
+                        <p class="card-text text-center">Sinalização</p>
+                    </div>
+                </a>
+            </div>
         </div>
-
-    <main>
-
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".ocorrencia");
+
+            cards.forEach(card => {
+                card.addEventListener("click", function () {
+                    cards.forEach(c => c.classList.remove("selecionado"));
+                    this.classList.add("selecionado");
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
