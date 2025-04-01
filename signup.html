@@ -3,34 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EyesEverywhere</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login - EyesEverywhere</title>
+    <link rel="stylesheet" href="stylelogin.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo.jpg" alt="EyesEverywhere">
-                <p></p>
-            </a>
-        
+    <div class="login-container">
+        <div class="login-box">
+            <img src="logo.jpg" alt="EyesEverywhere" class="logo">
+            <h2>Porque cuidar do que é público é cuidar de todos</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="info@xyz.com" required>
+                
+                <label for="password">Palavra-passe:</label>
+                <input type="password" id="password" name="password" placeholder="xxxxxxxxxx" required>
+                
+                <button type="submit" class="login-btn">Log in</button>
+                <div class="google-login">
+                    <button type="button" class="google-btn">Continue with Google</button>
+                </div>
+            </form>
         </div>
-        <nav>
-            <ul>
-                <li><a href="sobre.html">SOBRE NÓS</a></li>
-                <li><a href="comooperamos.html">COMO OPERAMOS</a></li>
-                <li><a href="ocorrencias.html">OCORRÊNCIAS</a></li>
-                <li><a href="contactos.html">CONTACTOS</a></li>
-            </ul>
-        </nav>
-        <div class="auth-links">
-            <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
-        </div>
-    </header>
-    <main>
-        <section class="hero">
-            <img src="estrada.jpg" alt="Estrada">
-        </section>
-    </main>
+    <div class="image-container">
+        <img src="sunset.png" alt="Cidade ao entardecer">
 </body>
 </html>
