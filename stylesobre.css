@@ -99,14 +99,16 @@ body::before {
 }
 
 .container {
-    width: 80%;
+    width: 100%; /* Garante que o container ocupa toda a largura da página */
+    max-width: 80%; /* Mantém um limite para não ficar exageradamente largo */
     margin: 50px auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinha tudo à esquerda */
+    align-items: center; /* Centraliza o conteúdo */
     text-align: left;
     color: white;
 }
+
 
 .titulo {
     width: 100%;
@@ -121,8 +123,10 @@ body::before {
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.6;
-    max-width: 800px; /* Limita a largura do texto para melhor leitura */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Melhora a visibilidade */
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: none; /* Remove a limitação de 800px */
+    text-align: justify; /* Justifica o texto para melhor legibilidade */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Mantém a visibilidade */
 }
 
 
