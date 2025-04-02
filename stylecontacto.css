@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orelega One', 'cursive';
+}
+
+footer {
+    background: #f8f8f8; /* Cor de fundo cinza claro */
+    padding: 40px 20px;
+    text-align: center;
+}
+ 
+.footer-container {
+    display: flex;
+    justify-content: space-around; /*  Distribui os elementos com espaçamento uniforme */
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+/*Títulos*/
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.footer-section p {
+    font-size: 16px;
+    color: #666;
+}
+
+/*Redes sociais*/
+.social-media {
+    margin: 20px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7; /* Ícones ficam com 70% de transparência*/
+    transition: 0.3s;
+}
+ 
+.social-media img:hover {
+    opacity: 1;  /*Quando o utilizador passa o rato sobre o ícone, ele fica totalmente visível (100% de opacidade).*/
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+
+/* Ícones e texto alinhados*/
+.footer-section p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #666;
+}
+
+.footer-section img {
+    width: 20px;  /* Ajuste o tamanho do ícone */
+    height: auto;
+    margin-right: 8px;  /* Espaço entre o ícone e o texto */
+}

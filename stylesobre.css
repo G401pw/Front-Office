@@ -1,0 +1,132 @@
+/* Estilos globais */
+* {
+    margin: 0; /* Remove os espaçamentos padrões dos elementos. */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orelega One', 'cursive';
+}
+
+/* Definir a imagem de fundo fixa */
+body {
+    background-image: url('Fundopagina.png'); /* Caminho da imagem */
+    background-size: cover; /* Ajusta para cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-attachment: fixed; /* Mantém fixa ao rolar a página */
+}
+
+/* Estilos do header */
+header {
+    display: flex; /* Organiza os elementos horizontalmente */
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.auth-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Estilizar a seção sobre-nós */
+.sobre-nos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Mantém o texto branco */
+    padding: 30px;
+    width: 60%;
+    text-align: center;
+}
+
+
+/* Ajustar os títulos e parágrafos */
+.sobre-nos h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sobre-nos p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.sobre-nos h1, .sobre-nos p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Criar um efeito de escurecimento na imagem de fundo */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Escurece a imagem */
+    z-index: -1; /* Garante que o efeito fique atrás do conteúdo principal */
+}
+
+.container {
+    width: 100%; /* Garante que o container ocupa toda a largura da página */
+    max-width: 80%; /* Mantém um limite para não ficar exageradamente largo */
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo */
+    text-align: left;
+    color: white;
+}
+
+
+.titulo {
+    width: 100%;
+    text-align: left; /* Mantém o título à esquerda */
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom: 2px solid white; /* Linha abaixo do título branco */
+    padding-bottom: 5px;
+}
+
+.texto {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: none; /* Remove a limitação de 800px */
+    text-align: justify; /* Justifica o texto para melhor legibilidade */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Mantém o texto visível sobre o fundo escuro */
+}
+
+
