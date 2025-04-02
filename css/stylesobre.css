@@ -8,7 +8,7 @@
 
 /* Definir a imagem de fundo fixa */
 body {
-    background-image: url('imagens/Fundopagina.png'); /* Caminho da imagem */
+    background-image: url('../imagens/Fundopagina.png'); /* Caminho da imagem */
     background-size: cover; /* Ajusta para cobrir toda a tela */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetição */
