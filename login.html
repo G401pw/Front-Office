@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in - EyesEverywhere</title>
     <link rel="stylesheet" href="css/stylelogin.css">
+    <link rel="icon" href="imagens/logo.jpg" type="image/x-icon">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div class="login-container">
@@ -20,17 +22,42 @@
                 
                 <button type="submit" class="login-btn">Log in</button>
     
-                <div class="google-login">
-                    <button class="google-btn">
-                        <img src="imagens/google.png" alt="Google Logo" class="google-icon">
-                        Continuar com Google
-                    </button>
+            <!-- Google Sign-In -->
+            <div class="google-login">
+                <div id="g_id_onload"
+                    data-client_id="723281601761-a8uc1h6aftjl6sn6jdbtc2h7o07no9dm.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse">
                 </div>
-            </form>
+                <div id="g_id_signin" data-type="standard" data-size="large" data-width="300"></div>
+            </div>
         </div>
-    
-        <!-- Área da imagem -->
+
+        <!-- Imagem lateral -->
         <div class="image-container"></div>
-    </div>    
+    </div>
+
+    <script>
+        function handleCredentialResponse(response) {
+            const data = JSON.parse(atob(response.credential.split('.')[1]));
+            console.log("Usuário Logado:", data);
+            alert(`Bem-vindo, ${data.name}!`);
+        }
+
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "723281601761-a8uc1h6aftjl6sn6jdbtc2h7o07no9dm.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+
+            google.accounts.id.renderButton(
+                document.getElementById("g_id_signin"),
+                {
+                    theme: "outline",
+                    size: "large",
+                    width: "300"
+                }
+            );
+        };
+    </script>
 </body>
 </html>
