@@ -1,23 +1,18 @@
-/* Estilos globais */
+/* RESET */
 * {
-    margin: 0; /* Remove os espaçamentos padrões dos elementos. */
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-/* Definir a imagem de fundo fixa */
 body {
-    background-image: url('../imagens/Fundopagina.png'); /* Caminho da imagem */
-    background-size: cover; /* Ajusta para cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição */
-    background-attachment: fixed; /* Mantém fixa ao rolar a página */
+    background-color: #f4f4f4;
 }
 
-/* Estilos do header */
+/* CABEÇALHO */
 header {
-    display: flex; /* Organiza os elementos horizontalmente */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background: white;
@@ -44,111 +39,120 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
+nav ul li a,
 .auth-links a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
 
-/* Estilizar a seção sobre-nós */
-.sobre-nos {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white; /* Mantém o texto branco */
-    padding: 30px;
-    width: 60%;
+/* VÍDEO HERO */
+.hero video {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* ESTATÍSTICAS */
+.estatisticas {
+    background-color: #f5f5f5;
+    padding: 60px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
     text-align: center;
 }
 
-
-/* Ajustar os títulos e parágrafos */
-.sobre-nos h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+.estatistica-box {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 220px;
+    transition: transform 0.3s ease;
 }
 
-.sobre-nos p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.estatistica-box:hover {
+    transform: translateY(-5px);
+}
+
+.estatistica-box h3 {
+    font-size: 48px;
+    color: #a46834; /* laranja */
+    margin: 0;
+}
+
+.estatistica-box p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.estatistica-box img {
+    width: 50px;
+    height: 50px;
     margin-bottom: 15px;
 }
 
-.sobre-nos h1, .sobre-nos p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+/* ATUALIZAÇÕES */
+.atualizacoes {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+                url('imagens/sobrefundo.jpg') center/cover no-repeat;
+    padding: 60px 40px;
+    text-align: center;
+    color: #222;
 }
 
-/* Criar um efeito de escurecimento na imagem de fundo */
-body::before {
-    content: "";
-    position: fixed; /* ← cobre sempre todo o ecrã, mesmo com scroll */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-    pointer-events: none; /* garante que não bloqueia interações */
-}
-
-
-.container {
-    width: 100%; /* Garante que o container ocupa toda a largura da página */
-    max-width: 80%; /* Mantém um limite para não ficar exageradamente largo */
-    margin: 50px auto;
+.atualizacoes h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #a46834; /* laranja */
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo */
-    text-align: left;
-    color: white;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-
-.titulo {
-    width: 100%;
-    text-align: left; /* Mantém o título à esquerda */
-    font-size: 28px;
-    font-weight: bold;
-    border-bottom: 2px solid white; /* Linha abaixo do título branco */
-    padding-bottom: 5px;
+.atualizacoes h2 img {
+    width: 30px;
+    height: 30px;
 }
 
-.texto {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.6;
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: none; /* Remove a limitação de 800px */
-    text-align: justify; /* Justifica o texto para melhor legibilidade */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Mantém o texto visível sobre o fundo escuro */
+.atualizacoes p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
 }
 
-.subtitulo {
-    margin-top: 40px;
-    font-size: 22px;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    text-align: left;
-    width: 100%;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 5px;
+.atualizacoes .noticias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-
-.mapa {
-    width: 100%;
-    max-width: 800px;
-    height: 400px;
-    margin-top: 20px;
-    border: 2px solid white;
+.noticia-box {
+    background-color: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.noticia-box:hover {
+    transform: scale(1.03);
+}
+
+.noticia-box strong {
+    color: #a46834;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.noticia-box p {
+    color: #333;
+    font-size: 0.95em;
+    line-height: 1.4em;
 }
