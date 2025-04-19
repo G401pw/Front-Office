@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8"> <!-- Garante que a página suporte caracteres especiais, como "ç" e "ã" --> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nós</title> <!-- Define o título da página (aparece na aba do navegador) -->
+    <title>Sobre nós</title>
     <link rel="stylesheet" href="css/stylesobre.css">
 
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-    <header> <!-- Define o cabeçalho da página, onde geralmente ficam logotipos e menus -->
+    <header>
         <div class="logo">
             <a href="index.html">
                 <img src="imagens/logo.jpg" alt="EyesEverywhere">
             </a>
-        
         </div>
         <nav>
             <ul>
@@ -23,27 +24,57 @@
                 <li><a href="contactos.html">CONTACTOS</a></li>
             </ul>
         </nav>
-        <div class="auth-links"> <!-- Login -->
+        <div class="auth-links">
             <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
         </div>
     </header>
-    <main> <!-- Define a área principal do conteúdo da página. -->
+
+    <main>
         <div class="container">
             <h1 class="titulo">SOBRE NÓS</h1>
-        <p class="texto"> <!-- Define um paragrafo com classe texto-->
-            Na EyesEverywhere, a nossa missão é garantir que infraestruturas e vias públicas estejam sempre seguras, funcionais e em perfeitas condições.  Somos especialistas em monitoramento e resposta rápida a ocorrências, atuando como os "olhos" que observam, analisam e resolvem problemas antes que eles se tornem maiores.
-        </p>
-        <p class="texto">
-            Através de uma plataforma digital intuitiva, permitimos que cidadãos e entidades reportem ocorrências de forma simples e eficaz. Nossa equipa de peritos altamente qualificados está pronta para agir, realizando auditorias detalhadas e propondo soluções ágeis e eficazes.
-        </p>
-        <p class="texto">
-            Acreditamos que a prevenção e a ação imediata são a chave para manter as cidades mais seguras e funcionais. Com tecnologia avançada, compromisso e transparência, trabalhamos para construir um futuro onde todos possam confiar na qualidade das infraestruturas que utilizam diariamente.
-        </p>
-        <p class="texto">
-            Na EyesEverywhere, estamos sempre de olho. Porque cuidar do que é público é cuidar de todos.
-        </p>
-    </div>
 
+            <h2 class="subtitulo">Apresentação</h2>
+            <p class="texto">
+                Na EyesEverywhere, a nossa missão é garantir que infraestruturas e vias públicas estejam sempre seguras, funcionais e em perfeitas condições.  Somos especialistas em monitoramento e resposta rápida a ocorrências, atuando como os "olhos" que observam, analisam e resolvem problemas antes que eles se tornem maiores.   Através de uma plataforma digital intuitiva, permitimos que cidadãos e entidades reportem ocorrências de forma simples e eficaz. Nossa equipa de peritos altamente qualificados está pronta para agir, realizando auditorias detalhadas e propondo soluções ágeis e eficazes.   Acreditamos que a prevenção e a ação imediata são a chave para manter as cidades mais seguras e funcionais. Com tecnologia avançada, compromisso e transparência, trabalhamos para construir um futuro onde todos possam confiar na qualidade das infraestruturas que utilizam diariamente. Na EyesEverywhere, estamos sempre de olho. Porque cuidar do que é público é cuidar de todos. 
+            </p>
+
+            <h2 class="subtitulo">Áreas de Atuação</h2>
+            <p class="texto">
+                Atendemos entidades públicas e privadas, realizando monitorização, auditorias técnicas, análise de ocorrências e consultoria especializada em gestão urbana.
+            </p>
+
+            <h2 class="subtitulo">Histórico de Auditorias</h2>
+            <p class="texto">
+                Desde 2020, a EyesEverywhere já realizou mais de 300 auditorias em vias urbanas, com um índice de satisfação superior a 95%. Os nossos relatórios são certificados e reconhecidos por várias entidades municipais.
+            </p>
+
+            <h2 class="subtitulo">Locais Cobertos</h2>
+            <p class="texto">A EyesEverywhere atua nas seguintes localidades:</p>
+            <div id="mapa" class="mapa"></div>
+        </div>
     </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const mapa = L.map('mapa').setView([41.545, -8.426], 8); // Centro em Braga
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(mapa);
+
+        const locais = [
+            { nome: 'Braga', coords: [41.545, -8.426] },
+            { nome: 'Guimarães', coords: [41.444, -8.296] },
+            { nome: 'Porto', coords: [41.157, -8.629] },
+            { nome: 'Lisboa', coords: [38.716, -9.139] }
+        ];
+
+        locais.forEach(local => {
+            L.marker(local.coords)
+            .addTo(mapa)
+            .bindPopup(`<b>${local.nome}</b>`);
+        });
+    </script>
 </body>
 </html>
