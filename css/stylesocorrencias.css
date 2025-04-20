@@ -69,5 +69,30 @@ a:hover {
     text-decoration: none;
 }
 
+.card.ocorrencia {
+    max-height: 250px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 
+.card.ocorrencia img {
+    height: 180px;
+    object-fit: cover;
+}
 
+.card.ocorrencia .card-body {
+    padding: 10px;
+}
+
+.card.ocorrencia .card-text {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 1200px) {
+    main.container {
+        max-width: 1100px;
+    }
+}
