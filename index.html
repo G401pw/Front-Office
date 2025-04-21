@@ -8,33 +8,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="imagens/logo.jpg" alt="EyesEverywhere" />
-      </a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="sobre.html">SOBRE NÓS</a></li>
-        <li><a href="comooperamos.html">COMO OPERAMOS</a></li>
-        <li><a href="ocorrencias.html">OCORRÊNCIAS</a></li>
-        <li><a href="contactos.html">CONTACTOS</a></li>
-      </ul>
-    </nav>
-    <div class="auth-links">
-      <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
-    </div>
-  </header>
+  <!-- TOPO COM VÍDEO DE FUNDO -->
+  <div class="topo-com-video" style="position: relative; height: 100vh; overflow: hidden;">
+    <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+      <source src="imagens/videos.mp4" type="video/mp4">
+      O seu navegador não suporta vídeo HTML5.
+    </video>
 
-  <main>
-    <!-- VÍDEO -->
-    <section class="hero">
-      <video width="90%" controls autoplay muted loop>
-        <source src="imagens/videos.mp4" type="video/mp4">
-        O seu navegador não suporta vídeo HTML5.
-      </video>
-    </section>
+    <header style="position: relative; z-index: 1; background: transparent; display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; color: white;">
+     <div class="logo">
+  <a href="index.html">
+    <img src="imagens/logo.png" alt="EyesEverywhere" style="height: 70px;" />
+  </a>
+</div>
+
+
+      <nav>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+          <li style="margin: 0 15px;"><a href="sobre.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">SOBRE NÓS</a></li>
+          <li style="margin: 0 15px;"><a href="comooperamos.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">COMO OPERAMOS</a></li>
+          <li style="margin: 0 15px;"><a href="ocorrencias.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">OCORRÊNCIAS</a></li>
+          <li style="margin: 0 15px;"><a href="contactos.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">CONTACTOS</a></li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="signup.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">SIGN UP</a> |
+        <a href="login.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">LOG IN</a>
+      </div>
+    </header>
+  </div>
 
     <!-- ESTATÍSTICAS -->
     <section class="estatisticas">
