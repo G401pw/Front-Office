@@ -94,6 +94,29 @@
     width: 90%;
   }
 }
+.titulo-atualizacoes {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .titulo-atualizacoes h2 {
+    font-size: 2.8em;
+    color: #a46834;
+    font-weight: bold;
+  }
+  
+  .linha-decorativa {
+    width: 60px;
+    height: 4px;
+    background-color: #f4a261;
+    margin: 12px auto 20px auto;
+    border-radius: 4px;
+  }
+  
+  .titulo-atualizacoes p {
+    font-size: 1.1em;
+    color: #444;
+  }
 
   
   .estatistica-box:hover {

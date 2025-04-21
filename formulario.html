@@ -38,7 +38,8 @@
     <div class="container d-flex justify-content-center mt-5">
         <div class="card p-4 shadow-lg" style="width: 50rem;">
             <h4 class="mb-4">Detalhes da Ocorrência</h4>
-            <form action="submit.html" method="POST">
+            <form action="submit.html" method="POST" enctype="multipart/form-data">
+
 
                 <!-- Nome e Palavra Passe -->
                 <div class="mb-3">
@@ -48,10 +49,9 @@
 
                 <div class="mb-3">
                     <label for="senha" class="form-label">Palavra Passe:</label>
-                    <input type="password" id="senha" name="senha" class="form-control is-invalid" required>
-                    <div class="invalid-feedback">Palavra Passe Errada!</div>
+                    <input type="password" id="senha" name="senha" class="form-control" required>
                 </div>
-
+                
                 <!-- Tipo de Ocorrência -->
                 <div class="mb-3">
                     <label for="tipo" class="form-label">Tipo de Ocorrência:</label>
@@ -100,6 +100,13 @@
                     </div>
                 </div>
 
+                <!-- Upload de Ficheiros -->
+                <div class="mb-3 mt-3">
+                    <label for="ficheiro" class="form-label">Anexar Imagens ou Ficheiros:</label>
+                    <input type="file" id="ficheiro" name="ficheiros[]" class="form-control" multiple>
+                </div>
+
+
                 <!-- Informações Extras -->
                 <div class="mb-3 mt-3">
                     <label for="informacoes" class="form-label">Informações Extras:</label>
@@ -134,4 +141,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
