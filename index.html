@@ -1,15 +1,17 @@
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>EyesEverywhere</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="imagens/logo.jpg" alt="EyesEverywhere">
+                <img src="imagens/logo.jpg" alt="EyesEverywhere" />
             </a>
         </div>
         <nav>
@@ -24,14 +26,66 @@
             <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
         </div>
     </header>
+
     <main>
+        <!-- VÍDEO -->
         <section class="hero">
             <video width="90%" controls autoplay muted loop>
                 <source src="imagens/videos.mp4" type="video/mp4">
-                Seu navegador não suporta a tag de vídeo.
+                O seu navegador não suporta vídeo HTML5.
             </video>
         </section>
+
+        <section class="estatisticas">
+            <div class="estatistica-box">
+                <div class="icone-circulo">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <h3>1.200</h3>
+                <p>Total de Ocorrências Reportadas</p>
+            </div>
+            <div class="estatistica-box">
+                <div class="icone-circulo">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>950</h3>
+                <p>Ocorrências Resolvidas</p>
+            </div>
+            <div class="estatistica-box">
+                <div class="icone-circulo">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3>250</h3>
+                <p>Ocorrências em Aberto</p>
+            </div>
+            <div class="estatistica-box">
+                <div class="icone-circulo">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>48h</h3>
+                <p>Tempo Médio de Resolução</p>
+            </div>
+        </section>
         
+<<section class="atualizacoes">
+    <h2>📰 Conteúdo Relevante e Atualizado</h2>
+    <p>Mantenha-se informado com as últimas atualizações da EyesEverywhere.</p>
+    <div class="noticias-cards">
+      <div class="noticia">
+        <span class="data">17/04</span>
+        <p class="texto">Finalizamos parceria com a Câmara Municipal de Braga.</p>
+      </div>
+      <div class="noticia">
+        <span class="data">15/04</span>
+        <p class="texto">100% das ocorrências em Guimarães resolvidas.</p>
+      </div>
+      <div class="noticia">
+        <span class="data">13/04</span>
+        <p class="texto">Novo sistema de auditoria foi implementado com sucesso.</p>
+      </div>
+    </div>
+  </section>
+  
     </main>
 </body>
 </html>

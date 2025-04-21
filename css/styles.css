@@ -1,12 +1,16 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
 body {
     background-color: #f4f4f4;
 }
+
+/* CABEÇALHO */
 header {
     display: flex;
     justify-content: space-between;
@@ -15,93 +19,135 @@ header {
     padding: 15px 50px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 .logo {
     display: flex;
     align-items: center;
 }
+
 .logo img {
     height: 80px;
     margin-right: 10px;
 }
+
 nav ul {
     list-style: none;
     display: flex;
 }
+
 nav ul li {
     margin: 0 15px;
 }
-nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
+
+nav ul li a,
 .auth-links a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
-.hero {
-  position: relative;
-  height: calc(100vh - 100px); /* altura total do ecrã - altura do header */
-  overflow: hidden;
-}
 
+/* VÍDEO HERO */
 .hero video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-
-/* Scroll suave para âncoras */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Secções internas */
-section {
-    padding: 100px 50px;
-    color: white;
-}
-
-/* Estilo para as secções com fundo escuro */
-#sobre, #comooperamos, #ocorrencias, #contactos {
-    background-color: #111;
-    border-bottom: 1px solid #333;
-}
-
-/* Overlay sobre o vídeo */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 600px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
+    object-fit: cover;
+}
+
+/* ESTATÍSTICAS */
+.estatisticas {
+    background-color: #f5f5f5;
+    padding: 60px 40px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 40px;
     text-align: center;
 }
 
-.scroll-down {
-    margin-top: 30px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    border: 2px solid white;
-    padding: 10px 20px;
-    border-radius: 5px;
+.estatistica-box {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 220px;
+    transition: transform 0.3s ease;
 }
 
-/* Torna o vídeo posição relativa para suportar overlay */
-.hero {
-    position: relative;
+.estatistica-box:hover {
+    transform: translateY(-5px);
 }
+
+.estatistica-box h3 {
+    font-size: 48px;
+    color: #a46834;
+    margin: 0;
+}
+
+.estatistica-box p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.estatistica-box img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* ATUALIZAÇÕES COM FUNDO CLARO */
+.atualizacoes {
+    background-color: #fff8f1; /* tom bege claro */
+    padding: 60px 40px;
+    text-align: center;
+    color: #333;
+}
+
+.atualizacoes h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #a46834;
+}
+
+.atualizacoes p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* NOTÍCIAS COM NOVAS CORES */
+.noticias-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.noticia {
+    background-color: #fff3e5; /* tom pastel laranja claro */
+    border: 1px solid #f4a261;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.noticia:hover {
+    transform: translateY(-5px);
+}
+
+.noticia .data {
+    display: block;
+    font-weight: bold;
+    color: #a46834;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.noticia .texto {
+    font-size: 1em;
+    color: #333;
+}
+
+
