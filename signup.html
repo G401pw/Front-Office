@@ -3,51 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up - EyesEverywhere</title>
-    <link rel="stylesheet" href="css/stylessignup.css">
-    <link rel="icon" href="imagens/logo.jpg" type="image/x-icon">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
+    <header>
+        <div class="logo">
             <a href="index.html">
-                <img src="imagens/logo.jpg" alt="EyesEverywhere" class="logo">
-            </a>              
-            <h2>Porque cuidar do que é público é<br>cuidar de todos</h2>
+                <img src="imagens/logo.jpg" alt="EyesEverywhere">
+            </a>
             
-            <form>
-                <div class="row">
-                    <div class="column">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" placeholder="Escreva o seu nome" required>
-
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="info@xyz.com" required>
-
-                        <label for="password">Palavra-passe:</label>
-                        <input type="password" id="password" name="password" placeholder="xxxxxxxxxx" required>
-
-                        <label for="empresa">Empresa:</label>
-                        <input type="text" id="empresa" name="empresa" placeholder="Escreva o nome da empresa" required>
-                    </div>
-
-                    <div class="column">
-                        <label for="apelido">Apelido:</label>
-                        <input type="text" id="apelido" name="apelido" placeholder="Escreva o seu apelido" required>
-
-                        <label for="telefone">Telefone:</label>
-                        <input type="text" id="telefone" name="telefone" placeholder="+351 900 000 000" required>
-
-                        <label for="confirm-password">Confirmar Palavra-passe:</label>
-                        <input type="password" id="confirm-password" name="confirm-password" placeholder="xxxxxxxxxx" required>
-                    </div>
-                </div>
-
-                <button type="submit" class="login-btn">Sign up</button>
-            </form>
         </div>
-
-        <div class="image-container"></div>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="sobre.html">SOBRE NÓS</a></li>
+                <li><a href="comooperamos.html">COMO OPERAMOS</a></li>
+                <li><a href="ocorrencias.html">OCORRÊNCIAS</a></li>
+                <li><a href="contactos.html">CONTACTOS</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="imagens/estrada.jpg" alt="Estrada">
+        </section>
+    </main>
 </body>
 </html>
