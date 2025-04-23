@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre nós</title>
     <link rel="stylesheet" href="css/stylesobre.css">
-
+    
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -57,7 +57,7 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const mapa = L.map('mapa').setView([41.545, -8.426], 8); // Centro em Braga
+        const mapa = L.map('mapa').setView([41.545, -8.426], 6); // Centro em Braga
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
@@ -65,15 +65,21 @@
 
         const locais = [
             { nome: 'Braga', coords: [41.545, -8.426] },
-            { nome: 'Guimarães', coords: [41.444, -8.296] },
-            { nome: 'Porto', coords: [41.157, -8.629] },
-            { nome: 'Lisboa', coords: [38.716, -9.139] }
+            { nome: 'Guimarães', coords: [41.444, -8.296] }
         ];
 
+        // Definir o ícone laranja para os marcadores
+        const orangeIcon = new L.Icon({
+            iconUrl: 'https://img.icons8.com/ios-filled/50/f17f00/marker.png', // ícone laranja
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+
         locais.forEach(local => {
-            L.marker(local.coords)
-            .addTo(mapa)
-            .bindPopup(`<b>${local.nome}</b>`);
+            L.marker(local.coords, { icon: orangeIcon })
+                .addTo(mapa)
+                .bindPopup(`<b>${local.nome}</b>`);
         });
     </script>
 </body>
