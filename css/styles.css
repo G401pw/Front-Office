@@ -311,3 +311,131 @@
   z-index: -1;
 }
 
+.avaliacao-contactos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  background-color: #fef6f0;
+}
+
+.avaliacao-form {
+  flex: 1;
+  min-width: 300px;
+  background: #fcefe4;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
+  border: 1px solid #f4c198;
+}
+
+.avaliacao-form h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #a85d0c;
+}
+
+.avaliacao-form p {
+  margin-bottom: 20px;
+  color: #6c4c2d;
+}
+
+.avaliacao-form label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.avaliacao-form input,
+.avaliacao-form select,
+.avaliacao-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.avaliacao-form button {
+  background-color: #f39952;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.avaliacao-form button:hover {
+  background-color: #e78a3c;
+}
+
+.avaliacao-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+/* Contactos */
+.contactos-lado-direito {
+  flex: 1;
+  min-width: 300px;
+  padding: 30px 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Centraliza verticalmente */
+  align-items: center;      /* Centraliza horizontalmente */
+  text-align: center;
+}
+
+.contactos-lado-direito h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 18px;
+}
+
+.contactos-lado-direito p {
+  margin: 2px 0 10px;
+  color: #555;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contactos-lado-direito img {
+  width: 18px;
+}
+
+/* Redes sociais */
+.social-media {
+  margin: 15px 0;
+}
+
+.social-media img {
+  width: 28px;
+  height: 28px;
+  opacity: 0.8;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+
+.social-media img:hover {
+  opacity: 1;
+}
+
+/* Mapa */
+.map-container {
+  margin-top: 10px;
+  width: 100%;
+}
+
