@@ -38,23 +38,22 @@
   </div>
 
 
-<!-- Botão Informações Atualizadas -->
-<div class="botao-informacoes" style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
-  <button id="scrollButton" style="padding: 15px 30px; background-color: #f4a261; color: white; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.3s; display: flex; align-items: center; gap: 10px;">
-    <i class="fas fa-arrow-down" style="font-size: 18px;"></i> <!-- Seta à esquerda -->
-    Informações Atualizadas
+<!-- Botão para ver informações atualizadas -->
+<div class="botao-informacoes" style="position: absolute; top: 90%; right: 5%; z-index: 2;">
+  <button id="scrollButton" style="padding: 15px 30px; background-color: #f4a261; color: white; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.3s; display: flex; align-items: center; justify-content: center;">
+    <i class="fas fa-arrow-down" style="font-size: 18px;"></i> <!-- Seta -->
   </button>
 </div>
 
 <!-- Script para fazer scroll ao clicar no botão-->
-  <script>
-    document.getElementById('scrollButton').addEventListener('click', function() {
-      // Rolagem suave para a seção de "Estatísticas"
-      document.querySelector('.estatisticas').scrollIntoView({
-        behavior: 'smooth'
-      });
+<script>
+  document.getElementById('scrollButton').addEventListener('click', function() {
+    // Rolagem suave para a seção de "Estatísticas"
+    document.querySelector('.estatisticas').scrollIntoView({
+      behavior: 'smooth'
     });
-  </script>
+  });
+</script>
 
     <!-- ESTATÍSTICAS -->
     <section class="estatisticas">
