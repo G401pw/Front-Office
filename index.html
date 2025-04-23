@@ -22,7 +22,6 @@
   </a>
 </div>
 
-
       <nav>
         <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
           <li style="margin: 0 15px;"><a href="sobre.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">SOBRE NÓS</a></li>
@@ -37,6 +36,25 @@
       </div>
     </header>
   </div>
+
+
+<!-- Botão Informações Atualizadas -->
+<div class="botao-informacoes" style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+  <button id="scrollButton" style="padding: 15px 30px; background-color: #f4a261; color: white; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.3s; display: flex; align-items: center; gap: 10px;">
+    <i class="fas fa-arrow-down" style="font-size: 18px;"></i> <!-- Seta à esquerda -->
+    Informações Atualizadas
+  </button>
+</div>
+
+<!-- Script para fazer scroll ao clicar no botão-->
+  <script>
+    document.getElementById('scrollButton').addEventListener('click', function() {
+      // Rolagem suave para a seção de "Estatísticas"
+      document.querySelector('.estatisticas').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  </script>
 
     <!-- ESTATÍSTICAS -->
     <section class="estatisticas">
@@ -158,5 +176,6 @@
       }
     });
   </script>
+
 </body>
 </html>

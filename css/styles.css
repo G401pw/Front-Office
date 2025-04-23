@@ -290,3 +290,24 @@
   }
   
   
+/* Estilo do botão centralizado */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Vídeo Hero */
+.topo-com-video {
+  position: relative;
+  height: 100vh;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
