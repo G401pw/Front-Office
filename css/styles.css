@@ -439,3 +439,14 @@
   width: 100%;
 }
 
+.info-blocos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-bloco {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
