@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EyesEverywhere - Logado</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- TOPO COM VÍDEO DE FUNDO -->
+  <div class="topo-com-video" style="position: relative; height: 100vh; overflow: hidden;">
+    <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+      <source src="imagens/videos.mp4" type="video/mp4">
+      O seu navegador não suporta vídeo HTML5.
+    </video>
+
+    <header style="position: relative; z-index: 1; background: transparent; display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; color: white;">
+      <div class="logo">
+        <a href="index_login.html">
+          <img src="imagens/logo.png" alt="EyesEverywhere" style="height: 90px;" />
+        </a>
+      </div>
+
+      <nav>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+          <li style="margin: 0 15px;"><a href="sobre.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">SOBRE NÓS</a></li>
+          <li style="margin: 0 15px;"><a href="comooperamos.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">COMO OPERAMOS</a></li>
+          <li style="margin: 0 15px;"><a href="ocorrencias.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">OCORRÊNCIAS</a></li>
+          <li style="margin: 0 15px;"><a href="contactos.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">CONTACTOS</a></li>
+        </ul>
+      </nav>
+
+      <div id="user-info" style="text-align: center; font-size: 18px; margin-top: 10px;">
+        <!-- O nome do usuário será exibido aqui -->
+      </div>
+    </header>
+  </div>
+
+  <!-- Botão para ver informações atualizadas -->
+  <div class="botao-informacoes" style="position: absolute; top: 90%; right: 5%; z-index: 2;">
+    <button id="scrollButton" style="padding: 15px 30px; background-color: #f4a261; color: white; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; transition: background-color 0.3s; display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-arrow-down" style="font-size: 18px;"></i> <!-- Seta -->
+    </button>
+  </div>
+
+  <!-- Script para fazer scroll ao clicar no botão-->
+  <script>
+    document.getElementById('scrollButton').addEventListener('click', function() {
+      // Rolagem suave para a seção de "Estatísticas"
+      document.querySelector('.estatisticas').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+
+    // Função para verificar se o usuário está logado e exibir o nome no topo
+    window.onload = function() {
+      const userName = localStorage.getItem("userName");
+
+      // Se o nome do usuário estiver no localStorage, mostrar ele
+      if (userName) {
+        // Exibe o nome do usuário no topo (sem o "Bem-vindo")
+        document.getElementById("userNameDisplay").innerText = userName;
+      }
+    };
+  </script>
+
+  <!-- ESTATÍSTICAS -->
+  <section class="estatisticas">
+    <div class="estatistica-box">
+      <div class="icone-circulo"><i class="fas fa-search"></i></div>
+      <h3>320</h3>
+      <p>Auditorias Realizadas</p>
+    </div>
+    <div class="estatistica-box">
+      <div class="icone-circulo"><i class="fas fa-exclamation-circle"></i></div>
+      <h3>1.200</h3>
+      <p>Ocorrências Reportadas</p>
+    </div>
+    <div class="estatistica-box">
+      <div class="icone-circulo"><i class="fas fa-check-circle"></i></div>
+      <h3>950</h3>
+      <p>Ocorrências Resolvidas</p>
+    </div>
+    <div class="estatistica-box">
+      <div class="icone-circulo"><i class="fas fa-clock"></i></div>
+      <h3>48h</h3>
+      <p>Tempo Médio de Resposta</p>
+    </div>
+    <div class="estatistica-box">
+      <div class="icone-circulo"><i class="fas fa-smile-beam"></i></div>
+      <h3>97%</h3>
+      <p>Satisfação dos Cidadãos</p>
+    </div>
+  </section>
+
+  <!-- ATUALIZAÇÕES -->
+  <section class="atualizacoes">
+    <div class="titulo-atualizacoes">
+      <h2>Conteúdo Relevante e Atualizado</h2>
+      <div class="linha-decorativa"></div>
+      <p>Mantenha-se informado com as últimas atualizações da EyesEverywhere.</p>
+    </div>
+
+    <div class="noticias-cards">
+      <div class="noticia">
+        <span class="data">17/04</span>
+        <p class="texto">Finalizamos parceria com a Câmara Municipal de Braga.</p>
+      </div>
+      <div class="noticia">
+        <span class="data">15/04</span>
+        <p class="texto">100% das ocorrências em Guimarães resolvidas.</p>
+      </div>
+      <div class="noticia">
+        <span class="data">13/04</span>
+        <p class="texto">Novo sistema de auditoria foi implementado com sucesso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRÁFICO DONUT -->
+  <section class="grafico-distribuicao">
+    <div class="titulo-atualizacoes">
+      <h2>Distribuição dos Conteúdos</h2>
+      <div class="linha-decorativa"></div>
+      <p>Uma visão geral das principais áreas de atualização da EyesEverywhere.</p>
+    </div>
+
+    <div class="grafico-container">
+      <canvas id="graficoDonut"></canvas>
+      <ul class="legenda-grafico">
+        <li><span style="background-color: #f4a261;"></span> Parcerias (30%)</li>
+        <li><span style="background-color: #2a9d8f;"></span> Ocorrências Resolvidas (25%)</li>
+        <li><span style="background-color: #e76f51;"></span> Auditorias (15%)</li>
+        <li><span style="background-color: #264653;"></span> Eventos Públicos (20%)</li>
+        <li><span style="background-color: #e9c46a;"></span> Sensibilização (10%)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('graficoDonut').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Parcerias', 'Ocorrências Resolvidas', 'Auditorias', 'Eventos Públicos', 'Sensibilização'],
+        datasets: [{
+          data: [30, 25, 15, 20, 10],
+          backgroundColor: ['#f4a261', '#2a9d8f', '#e76f51', '#264653', '#e9c46a'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        cutout: '65%',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            enabled: true,
+            backgroundColor: '#fff',
+            titleColor: '#000',
+            bodyColor: '#000',
+            borderColor: '#a46834',
+            borderWidth: 1,
+            titleFont: {
+              size: 16,
+              weight: 'bold'
+            },
+            bodyFont: {
+              size: 14
+            },
+            padding: 12,
+            cornerRadius: 6,
+            displayColors: true,
+            callbacks: {
+              label: function(context) {
+                return `${context.label}: ${context.formattedValue}%`;
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

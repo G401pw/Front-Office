@@ -13,9 +13,9 @@
         <div class="login-box">
             <a href="index.html">
                 <img src="imagens/logo.png" alt="EyesEverywhere" class="logo">
-              </a>              
+            </a>              
             <h2>Porque cuidar do que é público é cuidar de todos</h2>
-            <form>
+            <form id="loginForm">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="info@xyz.com" required>
                 
@@ -23,6 +23,7 @@
                 <input type="password" id="password" name="password" placeholder="xxxxxxxxxx" required>
                 
                 <button type="submit" class="login-btn">Log in</button>
+            </form>
     
             <!-- Google Sign-In -->
             <div class="google-login">
@@ -39,10 +40,34 @@
     </div>
 
     <script>
+        // Função para verificar email e senha
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                // Se usuário encontrado, redireciona para a página index.html
+                alert(`Bem-vindo, ${user.nome}!`);
+                updateLoginCount();
+                window.location.href = "index_login.html"; 
+            } else {
+                // Se usuário não encontrado, exibe mensagem de erro
+                alert("Email ou senha incorretos. Tente novamente.");
+            }
+        });
+
+        // Função de login com o Google
         function handleCredentialResponse(response) {
             const data = JSON.parse(atob(response.credential.split('.')[1]));
             console.log("Usuário Logado:", data);
             alert(`Bem-vindo, ${data.name}!`);
+            updateLoginCount();
         }
 
         window.onload = function () {
@@ -60,6 +85,19 @@
                 }
             );
         };
+
+        // Função para atualizar o contador de logins diários
+        function updateLoginCount() {
+            const today = new Date().toISOString().split('T')[0];  // Pega a data no formato YYYY-MM-DD
+            const loginData = JSON.parse(localStorage.getItem("loginCount")) || {};
+
+            if (!loginData[today]) {
+                loginData[today] = 0;
+            }
+            
+            loginData[today]++;  // Incrementa o contador de logins para o dia de hoje
+            localStorage.setItem("loginCount", JSON.stringify(loginData));  // Salva no localStorage
+        }
     </script>
 </body>
 </html>

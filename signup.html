@@ -15,7 +15,7 @@
             </a>              
             <h2>Porque cuidar do que é público é<br>cuidar de todos</h2>
             
-            <form>
+            <form id="signup-form">
                 <div class="row">
                     <div class="column">
                         <label for="nome">Nome:</label>
@@ -28,7 +28,7 @@
                         <input type="password" id="password" name="password" placeholder="xxxxxxxxxx" required>
 
                         <label for="empresa">Empresa:</label>
-                        <input type="text" id="empresa" name="empresa" placeholder="Escreva o nome da empresa" required>
+                        <input type="text" id="empresa" name="empresa" placeholder="Escreva o nome da empresa">
                     </div>
 
                     <div class="column">
@@ -49,5 +49,78 @@
 
         <div class="image-container"></div>
     </div>
+
+    <!-- Modal de Sucesso -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <h3>Bem-Vindo, <span id="welcome-name"></span>!</h3>
+            <button id="closeModalBtn">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Verificação de email
+        function checkEmailExistence(email) {
+            const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+            return existingUsers.some(user => user.email === email);
+        }
+
+        // Adicionar novo usuário ao localStorage
+        function addUserToLocalStorage(user) {
+            const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+            existingUsers.push(user);
+            localStorage.setItem('users', JSON.stringify(existingUsers));
+        }
+
+        // Função para exibir o modal de sucesso
+        function showWelcomeModal(name) {
+            document.getElementById('welcome-name').innerText = name;
+            document.getElementById('welcomeModal').style.display = 'flex';
+        }
+
+        // Fechar o modal e redirecionar para a página inicial
+        document.getElementById('closeModalBtn').addEventListener('click', () => {
+            window.location.href = 'index_login.html'; // Redireciona para a página index.html
+        });
+
+        // Função de validação e envio do formulário
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o envio do formulário padrão
+
+            const nome = document.getElementById('nome').value;
+            const apelido = document.getElementById('apelido').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Verificação de email
+            if (checkEmailExistence(email)) {
+                alert('Este email já está a ser utilizado!');
+                return;
+            }
+
+            // Verificação de correspondência das senhas
+            if (password !== confirmPassword) {
+                alert('As senhas não correspondem!');
+                return;
+            }
+
+            // Criar o objeto de usuário
+            const user = {
+                nome: nome,
+                apelido: apelido,
+                email: email,
+                password: password,
+                empresa: document.getElementById('empresa').value,
+                telefone: document.getElementById('telefone').value
+            };
+
+            // Adicionar usuário ao localStorage
+            addUserToLocalStorage(user);
+
+            // Exibir mensagem de boas-vindas
+            showWelcomeModal(nome);
+        });
+    </script>
 </body>
 </html>
