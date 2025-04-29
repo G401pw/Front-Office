@@ -500,7 +500,6 @@
   transform: rotate(180deg);
 }
 
-
 /* Remover a faixa de cor */
 .linha-decorativa {
   display: none; /* Isso remove a faixa */
