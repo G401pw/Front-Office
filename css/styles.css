@@ -318,7 +318,9 @@
   gap: 40px;
   padding: 40px;
   background-color: #fef6f0;
+  align-items: stretch; /* Isso faz com que ambos os lados tenham a mesma altura */
 }
+
 
 .avaliacao-form {
   flex: 1;
@@ -326,8 +328,6 @@
   background: #fcefe4;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
-  border: 1px solid #f4c198;
 }
 
 .avaliacao-form h2 {
@@ -374,20 +374,24 @@
 }
 
 .avaliacao-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
+  flex: 1;
+  min-width: 300px;
+  background: #fcefe4;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
+  border: 1px solid #f4c198;
 }
 
 /* Contactos */
 .contactos-lado-direito {
-  flex: 1;
+  flex: 1.7;
   min-width: 300px;
   padding: 30px 20px;
-  background: #fff;
+  background: #fcefe4;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
+  border: 1px solid #f4c198;
   display: flex;
   flex-direction: column;
   justify-content: center;  /* Centraliza verticalmente */
@@ -528,3 +532,5 @@
 .grafico-container {
   margin-bottom: 10px; /* Ajuste o espaçamento inferior */
 }
+
+
