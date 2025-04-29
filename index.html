@@ -213,10 +213,16 @@
 </section>
 
 <script>
-  function toggleResposta(id) {
-    var resposta = document.getElementById('resposta' + id);
-    resposta.style.display = (resposta.style.display === 'none' || resposta.style.display === '') ? 'block' : 'none';
-  }
+ function toggleResposta(id) {
+  var resposta = document.getElementById('resposta' + id);
+  var pergunta = document.querySelector('.faq-pergunta:nth-child(' + id + ')');
+  
+  // Exibir ou esconder a resposta
+  resposta.style.display = (resposta.style.display === 'none' || resposta.style.display === '') ? 'block' : 'none';
+  
+  // Adiciona a classe para girar a seta
+  pergunta.classList.toggle('open');
+}
   
 </script>
 
