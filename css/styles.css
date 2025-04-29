@@ -450,3 +450,82 @@
   flex: 1 1 200px;
   min-width: 200px;
 }
+
+/* FAQ */
+/* FAQ */
+.faq {
+  background-color: #fff8f1; /* Fundo igual à parte superior */
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2.5em;
+  color: #a46834; /* Cor laranja */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+.faq-item {
+  margin: 10px 0;
+}
+
+.faq-pergunta {
+  font-size: 1.5em;
+  color: #f4a261; /* Cor laranja para as perguntas */
+  margin-bottom: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Adiciona um espaço entre a pergunta e o ícone */
+}
+
+.faq-pergunta i {
+  font-size: 1.2em;
+  transition: transform 0.3s;
+}
+
+.faq-resposta {
+  display: none;
+  font-size: 1.1em;
+  color: #333; /* Respostas em preto */
+  text-align: center;
+  line-height: 1.6; /* Melhora a legibilidade */
+  padding: 0 20px;
+}
+
+/* Adicionar efeito de rotação na seta */
+.faq-pergunta.open i {
+  transform: rotate(180deg);
+}
+
+
+/* Remover a faixa de cor */
+.linha-decorativa {
+  display: none; /* Isso remove a faixa */
+}
+
+/* Ou, se deseja apenas alterar a cor da faixa, modifique a linha de cor */
+.linha-decorativa {
+  background-color: #f0f0f0; /* Altere para a cor que desejar */
+}
+
+/* Remover o espaço extra ou ajustar entre o gráfico e as perguntas frequentes */
+.grafico-distribuicao {
+  margin-bottom: 0px; /* Remove qualquer margem extra */
+  padding-bottom: 0px; /* Remove qualquer padding extra */
+}
+
+.faq {
+  margin-top: 20px; /* Ajuste o espaçamento se necessário */
+  background-color: #fff8f1; /* A mesma cor da parte de cima */
+  padding: 60px 40px;
+  text-align: center;
+  margin-top: 0; /* Ajuste o topo se necessário */
+}
+
+/* Garantir que a distância entre o gráfico e as FAQs seja suave */
+.grafico-container {
+  margin-bottom: 10px; /* Ajuste o espaçamento inferior */
+}
