@@ -183,5 +183,47 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função que armazena a ocorrência no localStorage
+        function armazenarOcorrencia(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            
+            const tipo = document.getElementById("tipo").value;
+            const morada = document.getElementById("morada").value;
+            const cidade = document.getElementById("cidade").value;
+            const codigoPostal = document.getElementById("codigo_postal").value;
+            const data = document.getElementById("data").value;
+            const hora = document.getElementById("hora").value;
+            const informacoes = document.getElementById("informacoes").value;
+            
+            // Criando um objeto para a ocorrência
+            const ocorrencia = {
+                tipo,
+                morada,
+                cidade,
+                codigoPostal,
+                data,
+                hora,
+                informacoes
+            };
+            
+            // Lê as ocorrências já armazenadas no localStorage
+            let ocorrencias = JSON.parse(localStorage.getItem("ocorrencias")) || [];
+            
+            // Adiciona a nova ocorrência
+            ocorrencias.push(ocorrencia);
+            
+            // Armazena novamente no localStorage
+            localStorage.setItem("ocorrencias", JSON.stringify(ocorrencias));
+            
+            // Redireciona para a página de sucesso ou onde for necessário
+            alert("Ocorrência registrada com sucesso!");
+            window.location.href = "ocorrencias.html"; // Modifique conforme sua necessidade
+        }
+        
+        // Adiciona o evento ao enviar o formulário
+        document.querySelector("form").addEventListener("submit", armazenarOcorrencia);
+    </script>
+    
 </body>
 </html>
