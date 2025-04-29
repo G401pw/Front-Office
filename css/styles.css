@@ -436,12 +436,26 @@
   width: 18px;
 }
 
-/* Redes sociais */
-.social-media a {
-  color: #a46834; /* Cor laranja */
-  font-size: 32 px; /* Tamanho ajustado */
-  transition: 0.3s;
+/* Altere as cores dos ícones de telefone e e-mail para castanho */
+.contactos-lado-direito .info-bloco i {
+    color: #a46834 !important; /* Força a aplicação da cor castanha */
 }
+
+
+/* Redes sociais */
+.social-media img {
+    width: 50px; /* Aumenta o tamanho dos ícones */
+    height: 50px; /* Aumenta o tamanho dos ícones */
+    opacity: 0.8;
+    margin: 0 12px; /* Ajusta a margem para mais espaço entre os ícones */
+    transition: 0.3s;
+}
+
+.social-media img:hover {
+    opacity: 1;
+    transform: scale(1.2); /* Aplica um efeito de aumento ao passar o mouse */
+}
+
 
 .social-media a:hover {
   color: #f4a261; /* Cor ao passar o mouse */
