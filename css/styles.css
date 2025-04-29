@@ -437,20 +437,14 @@
 }
 
 /* Redes sociais */
-.social-media {
-  margin: 15px 0;
-}
-
-.social-media img {
-  width: 28px;
-  height: 28px;
-  opacity: 0.8;
-  margin: 0 8px;
+.social-media a {
+  color: #a46834; /* Cor laranja */
+  font-size: 32 px; /* Tamanho ajustado */
   transition: 0.3s;
 }
 
-.social-media img:hover {
-  opacity: 1;
+.social-media a:hover {
+  color: #f4a261; /* Cor ao passar o mouse */
 }
 
 /* Mapa */
