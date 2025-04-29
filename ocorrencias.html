@@ -38,7 +38,7 @@
         <h2 class="text-center text-white">ESCOLHER TIPO DE OCORRÊNCIA</h2>
         <div class="row mt-4 g-3">
             <div class="col-md-4">
-                <a href="formulario.html?tipo=Obstruções na Via Pública" class="card ocorrencia">
+                <a href="#" class="card ocorrencia" data-url="formulario.html?tipo=Obstruções na Via Pública">
                     <img src="imagens/obstrucoes.png" class="card-img-top" alt="Obstruções na Via Pública">
                     <div class="card-body">
                         <p class="card-text text-center">Obstruções na Via Pública</p>
@@ -46,7 +46,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="formulario.html?tipo=Postes caídos ou inclinados" class="card ocorrencia">
+                <a href="#" class="card ocorrencia" data-url="formulario.html?tipo=Postes caídos ou inclinados">
                     <img src="imagens/postes.png" class="card-img-top" alt="Postes caídos ou inclinados">
                     <div class="card-body">
                         <p class="card-text text-center">Postes caídos ou inclinados</p>
@@ -54,7 +54,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="formulario.html?tipo=Esgoto a céu aberto" class="card ocorrencia">
+                <a href="#" class="card ocorrencia" data-url="formulario.html?tipo=Esgoto a céu aberto">
                     <img src="imagens/esgoto.png" class="card-img-top" alt="Esgoto a céu aberto">
                     <div class="card-body">
                         <p class="card-text text-center">Esgoto a céu aberto</p>
@@ -62,7 +62,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="formulario.html?tipo=Buracos na Via Pública" class="card ocorrencia">
+                <a href="#" class="card ocorrencia" data-url="formulario.html?tipo=Buracos na Via Pública">
                     <img src="imagens/buracos.png" class="card-img-top" alt="Buracos na Via Pública">
                     <div class="card-body">
                         <p class="card-text text-center">Buracos na Via Pública</p>
@@ -70,7 +70,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="formulario.html?tipo=Falhas no Passeio" class="card ocorrencia">
+                <a href="#" class="card ocorrencia" data-url="formulario.html?tipo=Falhas no Passeio">
                     <img src="imagens/falhas.png" class="card-img-top" alt="Falhas no Passeio">
                     <div class="card-body">
                         <p class="card-text text-center">Falhas no Passeio</p>
@@ -78,7 +78,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="formulario.html?tipo=Sinalização" class="card ocorrencia">
+                <a href="#" class="card ocorrencia" data-url="formulario.html?tipo=Sinalização">
                     <img src="imagens/sinalizacao.png" class="card-img-top" alt="Sinalização">
                     <div class="card-body">
                         <p class="card-text text-center">Sinalização</p>
@@ -91,15 +91,27 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const cards = document.querySelectorAll(".ocorrencia");
-
+        
             cards.forEach(card => {
-                card.addEventListener("click", function () {
-                    cards.forEach(c => c.classList.remove("selecionado"));
-                    this.classList.add("selecionado");
+                card.addEventListener("click", function (e) {
+                    e.preventDefault(); // Impede o redirecionamento imediato
+                    const destino = this.getAttribute("data-url");
+        
+                    const userName = localStorage.getItem("userName");
+        
+                    if (userName) {
+                        // Se tiver sessão iniciada, segue direto
+                        window.location.href = destino;
+                    } else {
+                        // Caso não tenha, guarda o destino e vai para o login
+                        localStorage.setItem("redirectAfterLogin", destino);
+                        window.location.href = "login.html";
+                    }
                 });
             });
         });
     </script>
+        
 
     <script>
         window.onload = function () {

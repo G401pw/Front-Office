@@ -57,7 +57,11 @@
 
                 alert(`Bem-vindo, ${user.nome}!`);
                 updateLoginCount();
-                window.location.href = "index.html"; 
+                
+                const destino = localStorage.getItem("redirectAfterLogin") || "index.html";
+                localStorage.removeItem("redirectAfterLogin");
+                window.location.href = destino;
+ 
             } else {
                 // Se usuário não encontrado, exibe mensagem de erro
                 alert("Email ou senha incorretos. Tente novamente.");
