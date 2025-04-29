@@ -442,24 +442,6 @@
 }
 
 
-/* Redes sociais */
-.social-media img {
-    width: 50px; /* Aumenta o tamanho dos ícones */
-    height: 50px; /* Aumenta o tamanho dos ícones */
-    opacity: 0.8;
-    margin: 0 12px; /* Ajusta a margem para mais espaço entre os ícones */
-    transition: 0.3s;
-}
-
-.social-media img:hover {
-    opacity: 1;
-    transform: scale(1.2); /* Aplica um efeito de aumento ao passar o mouse */
-}
-
-
-.social-media a:hover {
-  color: #f4a261; /* Cor ao passar o mouse */
-}
 
 /* Mapa */
 .map-container {
