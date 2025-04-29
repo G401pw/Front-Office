@@ -31,9 +31,17 @@
         </ul>
       </nav>
 
-      <div id="user-info" style="text-align: center; font-size: 18px; margin-top: 10px;">
-        <!-- O nome do usuário será exibido aqui -->
+      <div class="user-area" style="display: flex; align-items: center; gap: 12px; margin-left: auto; color: white; font-weight: bold; font-size: 16px; padding-right: 30px;">
+        <div class="auth-links">
+          <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
+        </div>
+        <div class="user-logged" style="display: none;">
+          <span id="user-info"></span>
+          <span style="margin: 0 6px;">|</span>
+          <button id="logout-btn" style="background: none; border: none; color: white; font-weight: bold; font-size: 16px; cursor: pointer;">Logout</button>
+        </div>
       </div>
+      
     </header>
   </div>
 
@@ -56,13 +64,11 @@
     // Função para verificar se o usuário está logado e exibir o nome no topo
     window.onload = function() {
       const userName = localStorage.getItem("userName");
+        if (userName) {
+      document.getElementById("user-info").innerText = `Olá, ${userName}`;
+    }
+};
 
-      // Se o nome do usuário estiver no localStorage, mostrar ele
-      if (userName) {
-        // Exibe o nome do usuário no topo (sem o "Bem-vindo")
-        document.getElementById("userNameDisplay").innerText = userName;
-      }
-    };
   </script>
 
   <!-- ESTATÍSTICAS -->
@@ -184,5 +190,35 @@
     });
   </script>
 
+  <script>
+    window.onload = function () {
+      const userName = localStorage.getItem("userName");
+      const authLinks = document.querySelector(".auth-links");
+      const userLogged = document.querySelector(".user-logged");
+      const userInfo = document.getElementById("user-info");
+      const logoutBtn = document.getElementById("logout-btn");
+    
+      if (userName) {
+        if (authLinks) authLinks.style.display = "none";
+        if (userLogged) userLogged.style.display = "flex";
+        if (userInfo) userInfo.textContent = `Olá, ${userName}`;
+      }
+    
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+          localStorage.removeItem("userName");
+          window.location.href = "index.html";
+        });
+      }
+    
+      const scrollBtn = document.getElementById("scrollButton");
+      if (scrollBtn) {
+        scrollBtn.addEventListener("click", function () {
+          document.querySelector(".estatisticas").scrollIntoView({ behavior: "smooth" });
+        });
+      }
+    };
+  </script>
+  
 </body>
 </html>

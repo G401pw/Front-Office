@@ -52,7 +52,9 @@
             const user = users.find(user => user.email === email && user.password === password);
 
             if (user) {
-                // Se usuário encontrado, redireciona para a página index.html
+                // Guarda o nome do utilizador no localStorage
+                localStorage.setItem('userName', user.nome);
+
                 alert(`Bem-vindo, ${user.nome}!`);
                 updateLoginCount();
                 window.location.href = "index_login.html"; 
