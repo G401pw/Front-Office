@@ -574,7 +574,7 @@
 
 /* Efeito ao passar o mouse sobre a pergunta */
 .faq-pergunta:hover {
-  background-color: #f4a261; /* Muda a cor do fundo ao passar o mouse */
+  background-color: #f3ebe4; /* Muda a cor do fundo ao passar o mouse */
   transform: scale(1.05); /* Um leve aumento ao passar o mouse */
 }
 
@@ -599,7 +599,7 @@
 }
 
 .faq-pergunta:hover {
-  background-color: #f4a261; /* Muda o fundo ao passar o mouse */
+  background-color: #f8eee7; /* Muda o fundo ao passar o mouse */
   transform: scale(1.05); /* Leve aumento ao passar o mouse */
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
