@@ -30,18 +30,18 @@
           <li style="margin: 0 15px;"><a href="contactos.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">CONTACTOS</a></li>
         </ul>
       </nav>
+      <!-- Links de login e cadastro quando a sessão não está iniciada -->
       <div class="auth-links">
-        <a href="signup.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">SIGN UP</a> |
-        <a href="login.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">LOG IN</a>
+        <a href="signup.html">SIGN UP</a> | 
+        <a href="login.html">LOG IN</a>
       </div>
 
-
+      <!-- Área do usuário (aparece quando está logado) -->
       <div class="user-area" style="display: flex; align-items: center; gap: 12px; margin-left: auto; color: white; font-weight: bold; font-size: 16px; padding-right: 30px;">
-        <span id="user-info"></span>
+        <span id="user-info"></span> 
         <button id="logout-btn" style="display: none; background: none; border: none; color: white; font-weight: bold; font-size: 16px; cursor: pointer;">| Logout</button>
       </div>
-      
-      
+          
     </header>
   </div>
 
@@ -274,18 +274,18 @@
           </div>
           <div class="info-bloco">
             <h3>Contactos</h3>
-            <p><img src="imagens/telefone.png" alt="Telefone" style="width: 18px;"> +351 253 589 366</p>
-            <p><img src="imagens/email.png" alt="E-mail" style="width: 18px;"> info@eyeseverywhere.pt</p>
+            <p><i class="fas fa-phone"></i> +351 253 589 366</p>
+            <p><i class="fas fa-envelope"></i> info@eyeseverywhere.pt</p>
+
           </div>
         </div>
       
-        <div class="social-media">
-          <a href="#" style="color: #a46834;"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" style="color: #a46834;"><i class="fab fa-instagram"></i></a>
-          <a href="#" style="color: #a46834;"><i class="fab fa-twitter"></i></a>
-        </div>
+      <div class="social-media" style="display: flex; justify-content: center; gap: 30px;">
+        <i class="fab fa-facebook" style="color: #a46834; font-size: 25px;" onmouseover="this.style.color='#f4a261'" onmouseout="this.style.color='#a46834'"></i>
+        <i class="fab fa-instagram" style="color: #a46834; font-size: 25px;" onmouseover="this.style.color='#f4a261'" onmouseout="this.style.color='#a46834'"></i>
+        <i class="fab fa-twitter" style="color: #a46834; font-size: 25px;" onmouseover="this.style.color='#f4a261'" onmouseout="this.style.color='#a46834'"></i>
+      </div>
 
-      
         <div class="map-container">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3123.931517447219!2d-8.289683484309572!3d41.4440703792606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24f61b7dbb50ab%3A0x21b3ef7a923d8c9a!2sAlameda%20de%20S%C3%A3o%20D%C3%A2maso%2045%2C%204810-286%20Guimar%C3%A3es!5e0!3m2!1spt-BR!2spt!4v1712345678901"
