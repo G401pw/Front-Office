@@ -69,6 +69,13 @@ footer {
 .social-media {
     margin: 20px 0;
 }
+.social-media {
+    display: flex;
+    justify-content: center;  /* Centraliza os ícones horizontalmente */
+    align-items: center;      /* Alinha os ícones no centro verticalmente */
+    gap: 20px;                /* Espaço entre os ícones */
+    margin-top: 20px;         /* Distância do mapa */
+}
 
 .social-media a {
     margin: 0 10px;
