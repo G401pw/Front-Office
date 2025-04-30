@@ -72,6 +72,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Efeito de hover para os links de signup/login */
+.auth-links a:hover {
+    color: #f4a261;  /* A cor laranja desejada */
+}
+
 /* Área do usuário (quando a sessão está iniciada) */
 .user-area {
     display: flex;
