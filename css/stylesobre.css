@@ -28,6 +28,7 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    margin-right: auto; /* Isso alinha o logo à esquerda */
 }
 
 .logo img {
@@ -50,10 +51,37 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Links de login e cadastro */
+.auth-links {
+    display: flex;
+    gap: 15px;
+    color: black;
+    font-weight: bold;
+    margin-left: auto; /* Garante que os links vão para a direita */
+    padding-right: 50px; /* Distância à direita */
+}
+
+/* Quando o usuário está logado, oculta os links de signup/login */
+.auth-links.hidden {
+    display: none;
+}
+
 .auth-links a {
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+
+/* Área do usuário (quando a sessão está iniciada) */
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: auto;
+    padding-right: 50px; /* Distância à direita, igual aos links de login */
 }
 
 /* Estilizar a seção sobre-nós */

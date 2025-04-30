@@ -4,9 +4,11 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
 body {
     background-color: #f4f4f4;
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -15,31 +17,42 @@ header {
     padding: 15px 50px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 .logo {
     display: flex;
     align-items: center;
+    margin-right: auto; /* Isso alinha o logo à esquerda */
 }
+
 .logo img {
     height: 80px;
     margin-right: 10px;
 }
+
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center; /* Alinha as páginas ao centro */
+    margin: 0;
+    padding: 0;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
+
 .auth-links a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
+
 .hero img {
     width: 100%;
     height: auto;

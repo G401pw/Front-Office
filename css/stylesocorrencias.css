@@ -33,23 +33,41 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    margin-right: auto; /* Isso alinha o logo à esquerda */
 }
+
 .logo img {
     height: 80px;
     margin-right: 10px;
 }
+
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center; /* Alinha as páginas ao centro */
+    margin: 0;
+    padding: 0;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
+
+.auth-links {
+    display: flex;
+    gap: 15px;
+    color: black;
+    font-weight: bold;
+    margin-left: auto; /* Isso faz com que a área de login/logout fique à direita */
+    padding-right: 50px; /* Distância à direita */
+}
+
 .auth-links a {
     text-decoration: none;
     color: black;
@@ -93,6 +111,6 @@ a:hover {
 
 @media (min-width: 1200px) {
     main.container {
-        max-width: 1100px;
-    }
+        max-width: 1100px; /* Adicionando o ponto e vírgula para corrigir o erro */
+    }
 }

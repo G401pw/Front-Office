@@ -10,6 +10,28 @@
     margin-bottom: 10px;
 }
 
+/* Estilo do menu de navegação */
+nav ul li a {
+    text-decoration: none;
+    color: black; /* Ajuste para garantir que a cor do texto seja preta */
+    font-weight: bold;
+    text-shadow: none;  /* Remover o sombreado do texto */
+}
+
+/* Links de signup/login com separador | */
+.auth-links a {
+    text-decoration: none;
+    color: black; /* Garante que SIGN UP e LOG IN fiquem pretos */
+    font-weight: bold;
+    text-shadow: none;  /* Remover o sombreado */
+}
+
+/* Garantir que o separador "|" fique com a cor preta */
+.auth-links a + span {
+    color: black; /* A cor do separador | também será preta */
+    padding: 0 8px;  /* Ajusta a distância ao redor do separador */
+}
+
 footer {
     background: #f8f8f8; /* Cor de fundo cinza claro */
     padding: 40px 20px;
