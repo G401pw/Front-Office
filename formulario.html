@@ -1,227 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Ocorrência</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/stylesformulario.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Ocorrência</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/stylesformulario.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="imagens/logo.png" alt="EyesEverywhere">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="sobre.html">SOBRE NÓS</a></li>
-                <li><a href="comooperamos.html">COMO OPERAMOS</a></li>
-                <li><a href="ocorrencias.html">OCORRÊNCIAS</a></li>
-                <li><a href="contactos.html">CONTACTOS</a></li>
-            </ul>
-        </nav>
-        <div class="auth-links">
-            <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
-        </div>
-
-        <div class="user-area" style="display: flex; align-items: center; gap: 12px; margin-left: auto; color: black; font-weight: bold; font-size: 16px; padding-right: 30px;">
-            <span id="user-info"></span>
-            <button id="logout-btn" style="display: none; background: none; border: none; color: black; font-weight: bold; font-size: 16px; cursor: pointer;">Logout</button>
-        </div>
-    </header>
-
-    <!-- Cabeçalho -->
-    <header class="text-center bg-dark text-white py-4">
-        <h2>Formulário de Ocorrência</h2>
-        <p class="text-primary"></p>
-    </header>
-
-    <!-- Formulário dentro de um card centralizado -->
-    <div class="container d-flex justify-content-center mt-5">
-        <div class="card p-4 shadow-lg" style="width: 50rem;">
-            <h4 class="mb-4">Detalhes da Ocorrência</h4>
-            <form action="submit.html" method="POST" enctype="multipart/form-data">
-
-
-
-                
-                <!-- Tipo de Ocorrência -->
-                <div class="mb-3">
-                    <label for="tipo" class="form-label">Tipo de Ocorrência:</label>
-                    <select id="tipo" name="tipo" class="form-select">
-                        <option value="Buracos na Via Pública">Buracos na Via Pública</option>
-                        <option value="Postes caídos ou inclinados">Postes caídos ou inclinados</option>
-                        <option value="Sinalização">Sinalização</option>
-                        <option value="Obstruções na Via Pública">Obstruções na Via Pública</option>
-                        <option value="Esgoto a céu aberto">Esgoto a céu aberto</option>
-                        <option value="Falhas no Passeio">Falhas no Passeio</option>
-                    </select>
-                </div>                
-
-                <!-- Localização -->
-                <h5>Localização</h5>
-                <div class="mb-3">
-                    <label for="morada" class="form-label">Morada:</label>
-                    <input type="text" id="morada" name="morada" class="form-control">
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="cidade" class="form-label">Cidade:</label>
-                        <input type="text" id="cidade" name="cidade" class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="codigo_postal" class="form-label">Código Postal (Opcional):</label>
-                        <input type="text" id="codigo_postal" name="codigo_postal" class="form-control">
-                    </div>
-                </div>
-
-                <!-- Data e Hora -->
-                <h5 class="mt-4">Dia e Hora</h5>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="data" class="form-label">Data:</label>
-                        <input type="date" id="data" name="data" class="form-control">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="hora" class="form-label">Hora:</label>
-                        <input type="time" id="hora" name="hora" class="form-control">
-                    </div>
-                </div>
-
-                <!-- Upload de Ficheiros -->
-                <div class="mb-3 mt-3">
-                    <label for="ficheiro" class="form-label">Anexar Imagens ou Ficheiros:</label>
-                    <input type="file" id="ficheiro" name="ficheiros[]" class="form-control" multiple>
-                </div>
-
-
-                <!-- Informações Extras -->
-                <div class="mb-3 mt-3">
-                    <label for="informacoes" class="form-label">Informações Extras:</label>
-                    <textarea id="informacoes" name="informacoes" class="form-control"></textarea>
-                </div>
-
-                <!-- Botão -->
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-success btn-lg">Guardar</button>
-                </div>
-
-            </form>
-        </div>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="imagens/logo.png" alt="EyesEverywhere">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="sobre.html">SOBRE NÓS</a></li>
+        <li><a href="comooperamos.html">COMO OPERAMOS</a></li>
+        <li><a href="ocorrencias.html">OCORRÊNCIAS</a></li>
+        <li><a href="contactos.html">CONTACTOS</a></li>
+      </ul>
+    </nav>
+    <div class="auth-links">
+      <a href="signup.html">SIGN UP</a> | <a href="login.html">LOG IN</a>
     </div>
 
-    <script>
-        window.onload = function () {
-            // Lógica de seleção do tipo via URL
-            const params = new URLSearchParams(window.location.search);
-            const tipoOcorrencia = params.get("tipo");
-            if (tipoOcorrencia) {
-                const selectElement = document.getElementById("tipo");
-                for (let option of selectElement.options) {
-                    if (option.value === tipoOcorrencia) {
-                        selectElement.value = tipoOcorrencia; // Define o valor do select
-                        break;
-                    }
-                }
-            }
-    
-            // Preencher data e hora com valores atuais
-            const agora = new Date();
-    
-            const dataInput = document.getElementById('data');
-            const horaInput = document.getElementById('hora');
-    
-            // yyyy-mm-dd
-            const ano = agora.getFullYear();
-            const mes = String(agora.getMonth() + 1).padStart(2, '0');
-            const dia = String(agora.getDate()).padStart(2, '0');
-            dataInput.value = `${ano}-${mes}-${dia}`;
-    
-            // hh:mm
-            const horas = String(agora.getHours()).padStart(2, '0');
-            const minutos = String(agora.getMinutes()).padStart(2, '0');
-            horaInput.value = `${horas}:${minutos}`;
-    
-            // Lógica para verificar se o usuário está logado
-            const userName = localStorage.getItem("userName");
-            const authLinks = document.querySelector(".auth-links");
-            const userInfo = document.getElementById("user-info");
-            const logoutBtn = document.getElementById("logout-btn");
-    
-            if (userName) {
-                if (authLinks) authLinks.style.display = "none"; // Esconde "Sign Up | Log In"
-                if (userInfo) userInfo.textContent = `Olá, ${userName}`; // Mostra o nome do usuário
-                if (logoutBtn) logoutBtn.style.display = "inline"; // Mostra o botão Logout
-            }
-    
-            if (logoutBtn) {
-                logoutBtn.addEventListener("click", function () {
-                    localStorage.removeItem("userName"); // Remove a sessão do usuário
-                    window.location.href = "index.html"; // Redireciona para a página inicial
-                });
-            }
-    
-            // Scroll ao clicar no botão de seta
-            const scrollBtn = document.getElementById("scrollButton");
-            if (scrollBtn) {
-                scrollBtn.addEventListener("click", function () {
-                    document.querySelector(".estatisticas").scrollIntoView({ behavior: "smooth" });
-                });
-            }
-    
-            // Atualiza estatísticas de satisfação
-            atualizarDisplaySatisfacao();
-        };
-    </script>
-    
-    
+    <div class="user-area" style="display: flex; align-items: center; gap: 12px; margin-left: auto; color: black; font-weight: bold; font-size: 16px; padding-right: 30px;">
+      <span id="user-info"></span>
+      <button id="logout-btn" style="display: none; background: none; border: none; color: black; font-weight: bold; font-size: 16px; cursor: pointer;">Logout</button>
+    </div>
+  </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Função que armazena a ocorrência no localStorage
-        function armazenarOcorrencia(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-            
-            const tipo = document.getElementById("tipo").value;
-            const morada = document.getElementById("morada").value;
-            const cidade = document.getElementById("cidade").value;
-            const codigoPostal = document.getElementById("codigo_postal").value;
-            const data = document.getElementById("data").value;
-            const hora = document.getElementById("hora").value;
-            const informacoes = document.getElementById("informacoes").value;
-            
-            // Criando um objeto para a ocorrência
-            const ocorrencia = {
-                tipo,
-                morada,
-                cidade,
-                codigoPostal,
-                data,
-                hora,
-                informacoes
-            };
-            
-            // Lê as ocorrências já armazenadas no localStorage
-            let ocorrencias = JSON.parse(localStorage.getItem("ocorrencias")) || [];
-            
-            // Adiciona a nova ocorrência
-            ocorrencias.push(ocorrencia);
-            
-            // Armazena novamente no localStorage
-            localStorage.setItem("ocorrencias", JSON.stringify(ocorrencias));
-            
-            // Redireciona para a página de sucesso ou onde for necessário
-            alert("Ocorrência registrada com sucesso!");
-            window.location.href = "ocorrencias.html"; // Modifique conforme sua necessidade
-        }
+  <!-- Cabeçalho -->
+  <header class="text-center bg-dark text-white py-4">
+    <h2>Formulário de Ocorrência</h2>
+    <p class="text-primary"></p>
+  </header>
+
+  <!-- Formulário dentro de um card centralizado -->
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="card p-4 shadow-lg" style="width: 50rem;">
+      <h4 class="mb-4">Detalhes da Ocorrência</h4>
+      <form id="formOcorrencia" method="POST" enctype="multipart/form-data">
         
-        // Adiciona o evento ao enviar o formulário
-        document.querySelector("form").addEventListener("submit", armazenarOcorrencia);
-    </script>
+        <!-- Tipo de Ocorrência -->
+        <div class="mb-3">
+          <label for="tipo" class="form-label">Tipo de Ocorrência:</label>
+          <select id="tipo" name="tipo" class="form-select">
+            <option value="Buracos na Via Pública">Buracos na Via Pública</option>
+            <option value="Postes caídos ou inclinados">Postes caídos ou inclinados</option>
+            <option value="Sinalização">Sinalização</option>
+            <option value="Obstruções na Via Pública">Obstruções na Via Pública</option>
+            <option value="Esgoto a céu aberto">Esgoto a céu aberto</option>
+            <option value="Falhas no Passeio">Falhas no Passeio</option>
+          </select>
+        </div>
+
+        <!-- Localização -->
+        <h5>Localização</h5>
+        <div class="mb-3">
+          <label for="morada" class="form-label">Morada:</label>
+          <input type="text" id="morada" name="morada" class="form-control">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label for="cidade" class="form-label">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label for="codigo_postal" class="form-label">Código Postal (Opcional):</label>
+            <input type="text" id="codigo_postal" name="codigo_postal" class="form-control">
+          </div>
+        </div>
+
+        <!-- Data e Hora -->
+        <h5 class="mt-4">Dia e Hora</h5>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="data" class="form-label">Data:</label>
+            <input type="date" id="data" name="data" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label for="hora" class="form-label">Hora:</label>
+            <input type="time" id="hora" name="hora" class="form-control">
+          </div>
+        </div>
+
+        <!-- Upload de Ficheiros -->
+        <div class="mb-3 mt-3">
+          <label for="ficheiro" class="form-label">Anexar Imagens ou Ficheiros:</label>
+          <input type="file" id="ficheiro" name="ficheiros[]" class="form-control" multiple>
+        </div>
+
+        <!-- Informações Extras -->
+        <div class="mb-3 mt-3">
+          <label for="informacoes" class="form-label">Informações Extras:</label>
+          <textarea id="informacoes" name="informacoes" class="form-control"></textarea>
+        </div>
+
+        <!-- Botão -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-success btn-lg">Guardar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      // Lógica de seleção do tipo via URL
+      const params = new URLSearchParams(window.location.search);
+      const tipoOcorrencia = params.get("tipo");
+      if (tipoOcorrencia) {
+        const selectElement = document.getElementById("tipo");
+        for (let option of selectElement.options) {
+          if (option.value === tipoOcorrencia) {
+            selectElement.value = tipoOcorrencia; // Define o valor do select
+            break;
+          }
+        }
+      }
     
+      // Preencher data e hora com valores atuais
+      const agora = new Date();
+    
+      const dataInput = document.getElementById('data');
+      const horaInput = document.getElementById('hora');
+    
+      // yyyy-mm-dd
+      const ano = agora.getFullYear();
+      const mes = String(agora.getMonth() + 1).padStart(2, '0');
+      const dia = String(agora.getDate()).padStart(2, '0');
+      dataInput.value = `${ano}-${mes}-${dia}`;
+    
+      // hh:mm
+      const horas = String(agora.getHours()).padStart(2, '0');
+      const minutos = String(agora.getMinutes()).padStart(2, '0');
+      horaInput.value = `${horas}:${minutos}`;
+    
+      // Lógica para verificar se o usuário está logado
+      const userName = localStorage.getItem("userName");
+      const authLinks = document.querySelector(".auth-links");
+      const userInfo = document.getElementById("user-info");
+      const logoutBtn = document.getElementById("logout-btn");
+    
+      if (userName) {
+        if (authLinks) authLinks.style.display = "none"; // Esconde "Sign Up | Log In"
+        if (userInfo) userInfo.textContent = `Olá, ${userName}`; // Mostra o nome do usuário
+        if (logoutBtn) logoutBtn.style.display = "inline"; // Mostra o botão Logout
+      }
+    
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+          localStorage.removeItem("userName"); // Remove a sessão do usuário
+          window.location.href = "index.html"; // Redireciona para a página inicial
+        });
+      }
+    
+      // Scroll ao clicar no botão de seta
+      const scrollBtn = document.getElementById("scrollButton");
+      if (scrollBtn) {
+        scrollBtn.addEventListener("click", function () {
+          document.querySelector(".estatisticas").scrollIntoView({ behavior: "smooth" });
+        });
+      }
+    
+      // Atualiza estatísticas de satisfação
+      atualizarDisplaySatisfacao();
+    };
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Função que armazena a ocorrência no localStorage
+    function armazenarOcorrencia(event) {
+      event.preventDefault(); // Impede o envio padrão do formulário
+      
+      const tipo = document.getElementById("tipo").value;
+      const morada = document.getElementById("morada").value;
+      const cidade = document.getElementById("cidade").value;
+      const codigoPostal = document.getElementById("codigo_postal").value;
+      const data = document.getElementById("data").value;
+      const hora = document.getElementById("hora").value;
+      const informacoes = document.getElementById("informacoes").value;
+      
+      // Gerar um ID único para a ocorrência usando o timestamp atual
+      const id = Date.now();
+
+      // Criando um objeto para a ocorrência
+      const ocorrencia = {
+        id, // Adiciona o ID único
+        tipo,
+        morada,
+        cidade,
+        codigoPostal,
+        data,
+        hora,
+        informacoes
+      };
+
+      // Lê as ocorrências já armazenadas no localStorage
+      let ocorrencias = JSON.parse(localStorage.getItem("ocorrencias")) || [];
+
+      // Adiciona a nova ocorrência
+      ocorrencias.push(ocorrencia);
+
+      // Armazena novamente no localStorage
+      localStorage.setItem("ocorrencias", JSON.stringify(ocorrencias));
+
+      // Redireciona para a página de sucesso ou onde for necessário
+      alert("Ocorrência registrada com sucesso!");
+      window.location.href = "ocorrencias.html"; // Modifique conforme sua necessidade
+    }
+
+    // Adiciona o evento ao enviar o formulário
+    document.querySelector("form").addEventListener("submit", armazenarOcorrencia);
+  </script>
+  
 </body>
 </html>
