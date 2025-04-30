@@ -40,17 +40,18 @@ footer {
  
 .footer-container {
     display: flex;
-    justify-content: space-around; /*  Distribui os elementos com espaçamento uniforme */
+    justify-content: center;  /* Alinha tudo no centro */
     flex-wrap: wrap;
+    gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
     padding-bottom: 20px;
 }
 
 .footer-section {
+    text-align: center;  /* Alinha o conteúdo dentro da seção ao centro */
     flex: 1;
-    min-width: 250px;
-    text-align: center;
+    min-width: 200px;
 }
 
 /*Títulos*/
@@ -83,14 +84,16 @@ footer {
 }
 
 .social-media img {
-    width: 30px;
+    width: 30px; /* Tamanho do ícone */
     height: 30px;
-    opacity: 0.7; /* Ícones ficam com 70% de transparência*/
-    transition: 0.3s;
+    opacity: 0.7; /* Opacidade inicial */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
+    filter: sepia(100%) saturate(500%) hue-rotate(-45deg); /* Filtro laranja */
 }
  
 .social-media img:hover {
-    opacity: 1;  /*Quando o utilizador passa o rato sobre o ícone, ele fica totalmente visível (100% de opacidade).*/
+    opacity: 1;  /* Tornar totalmente visível */
+    transform: scale(1.1);  /* Leve aumento de tamanho */
 }
 
 .map-container {
@@ -100,14 +103,13 @@ footer {
     padding-top: 20px;
 }
 
-
 /* Ícones e texto alinhados*/
 .footer-section p {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    color: #666;
+     color: #a46834;
 }
 
 .footer-section img {
