@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in - EyesEverywhere</title>
     <link rel="stylesheet" href="css/stylelogin.css">
     <link rel="icon" href="imagens/logo.jpg" type="image/x-icon">
@@ -40,6 +40,9 @@
     </div>
 
     <script>
+        const emailAutorizado = ["ljvieirafernandes@gmail.com", "edunas04@gmail.com", "joaninharibeiro2004@gmail.com", "gpiaia@hotmail.com", "franciscaribeiro200@gmail.com", "raquel.pereira.cardoso@gmail.com"];
+        const senhaAutorizada = "1234567890";
+
         // Função para verificar email e senha
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -47,35 +50,41 @@
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             
-            let users = JSON.parse(localStorage.getItem("users")) || [];
+            // Verifica se o email está na lista de autorizados e a senha está correta
+            if (emailAutorizado.includes(email) && password === senhaAutorizada) {
+                // Armazena no localStorage o nome do usuário
+                localStorage.setItem("userName", email.split('@')[0]);
+                localStorage.setItem("userEmail", email);
 
-            const user = users.find(user => user.email === email && user.password === password);
+                alert(`Bem-vindo, ${email.split('@')[0]}!`);
+                window.location.href = "Ocorrencias.html";  // Redireciona para a página de ocorrências
 
-            if (user) {
-                // Guarda o nome do utilizador no localStorage
-                localStorage.setItem('userName', user.nome);
-
-                alert(`Bem-vindo, ${user.nome}!`);
-                updateLoginCount();
-                
-                const destino = localStorage.getItem("redirectAfterLogin") || "index.html";
-                localStorage.removeItem("redirectAfterLogin");
-                window.location.href = destino;
- 
             } else {
-                // Se usuário não encontrado, exibe mensagem de erro
-                alert("Email ou senha incorretos. Tente novamente.");
+                alert("Credenciais inválidas.");
             }
         });
 
         // Função de login com o Google
         function handleCredentialResponse(response) {
             const data = JSON.parse(atob(response.credential.split('.')[1]));
-            console.log("Usuário Logado:", data);
-            alert(`Bem-vindo, ${data.name}!`);
-            updateLoginCount();
+            const emailGoogle = data.email;
+            const nomeGoogle = data.name;
+
+            // Verifica se o email do Google está na lista de autorizados
+            if (emailAutorizado.includes(emailGoogle)) {
+                alert(`Bem-vindo, ${data.name}!`);
+
+                // Armazenando nome e email no localStorage
+                localStorage.setItem("userName", nomeGoogle);
+                localStorage.setItem("userEmail", emailGoogle);
+
+                window.location.href = "Ocorrencias.html";  // Redireciona para a página de ocorrências
+            } else {
+                alert("Este email não está autorizado a fazer login.");
+            }
         }
 
+        // Inicializa o botão do Google
         window.onload = function () {
             google.accounts.id.initialize({
                 client_id: "723281601761-a8uc1h6aftjl6sn6jdbtc2h7o07no9dm.apps.googleusercontent.com",
@@ -91,19 +100,6 @@
                 }
             );
         };
-
-        // Função para atualizar o contador de logins diários
-        function updateLoginCount() {
-            const today = new Date().toISOString().split('T')[0];  // Pega a data no formato YYYY-MM-DD
-            const loginData = JSON.parse(localStorage.getItem("loginCount")) || {};
-
-            if (!loginData[today]) {
-                loginData[today] = 0;
-            }
-            
-            loginData[today]++;  // Incrementa o contador de logins para o dia de hoje
-            localStorage.setItem("loginCount", JSON.stringify(loginData));  // Salva no localStorage
-        }
     </script>
 </body>
 </html>
