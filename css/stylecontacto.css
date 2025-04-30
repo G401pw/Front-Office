@@ -66,6 +66,7 @@ footer {
     color: #666;
 }
 
+
 /*Redes sociais*/
 .social-media {
     margin: 20px 0;
@@ -111,6 +112,11 @@ footer {
     font-size: 16px;
      color: #a46834;
 }
+
+.footer-section p {
+  font-size: 16px;
+  color: #666;
+
 
 .footer-section img {
     width: 20px;  /* Ajuste o tamanho do ícone */
