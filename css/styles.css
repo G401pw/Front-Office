@@ -633,16 +633,39 @@
   margin-bottom: 10px; /* Ajuste o espaçamento inferior */
 }
 
-.icon-sino {
-  width: 24px;
-  cursor: pointer;
+.notificacoes {
   position: relative;
+}
+
+.caixa-notificacoes {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 999;
+}
+
+.notificacoes:hover .caixa-notificacoes {
+  display: block;
+}
+
+
+/* Ícone e contador */
+.icon-wrapper {
+  position: relative;
+  cursor: pointer;
 }
 
 .contador {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -6px;
+  right: -10px;
   background: red;
   color: white;
   font-size: 12px;
@@ -650,24 +673,7 @@
   padding: 2px 6px;
 }
 
-.caixa-notificacoes {
-  position: absolute;
-  right: 0;
-  top: 30px;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 250px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 999;
+/* Hover para mostrar a caixa */
+.notificacoes:hover .caixa-notificacoes {
+  display: block;
 }
-
-.oculto {
-  display: none;
-}
-
-.notificacoes {
-  position: relative;
-  margin: 0 10px;
-}
-

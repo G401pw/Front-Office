@@ -16,45 +16,45 @@
     </video>
 
     <header style="position: relative; z-index: 1; background: transparent; display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; color: white;">
-     <div class="logo">
-  <a href="index.html">
-    <img src="imagens/logo.png" alt="EyesEverywhere" style="height: 90px;" />
-  </a>
-</div>
-
-      <nav>
-        <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
-          <li style="margin: 0 15px;"><a href="sobre.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">SOBRE NÓS</a></li>
-          <li style="margin: 0 15px;"><a href="comooperamos.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">COMO OPERAMOS</a></li>
-          <li style="margin: 0 15px;"><a href="ocorrencias.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">OCORRÊNCIAS</a></li>
-          <li style="margin: 0 15px;"><a href="contactos.html" style="color: white; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">CONTACTOS</a></li>
-        </ul>
-      </nav>
-      <!-- Links de login e cadastro quando a sessão não está iniciada -->
-      <div class="auth-links">
-        <a href="signup.html">SIGN UP</a> | 
-        <a href="login.html">LOG IN</a>
-      </div>
-
-      <!-- Área do usuário (aparece quando está logado) -->
-      <span id="user-info"></span> 
-
-<div class="notificacoes">
-  <div class="icon-wrapper" onclick="toggleNotificacoes()">
-    <img src="imagens/sino.png" alt="Notificações" class="icon-sino">
-    <span class="contador" id="contador-notificacoes">2</span> <!-- Exemplo -->
+  <div class="logo">
+    <a href="index.html">
+      <img src="imagens/logo.png" alt="EyesEverywhere" style="height: 90px;" />
+    </a>
   </div>
-  <div id="caixa-notificacoes" class="caixa-notificacoes oculto">
-    <p><strong>Ocorrência:</strong> aceite - Buraco na estrada</p>
-    <p><strong>Ocorrência:</strong> rejeitada - Falha no passeio</p>
-  </div>
-</div>
 
-<button id="logout-btn" style="display: none; background: none; border: none; color: white; font-weight: bold; font-size: 16px; cursor: pointer;">| Logout</button>
+  <nav style="flex: 1;">
+    <ul style="list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; gap: 25px;">
+      <li><a href="sobre.html" style="color: white; font-weight: bold; text-decoration: none;">SOBRE NÓS</a></li>
+      <li><a href="comooperamos.html" style="color: white; font-weight: bold; text-decoration: none;">COMO OPERAMOS</a></li>
+      <li><a href="ocorrencias.html" style="color: white; font-weight: bold; text-decoration: none;">OCORRÊNCIAS</a></li>
+      <li><a href="contactos.html" style="color: white; font-weight: bold; text-decoration: none;">CONTACTOS</a></li>
+    </ul>
+  </nav>
 
+  <!-- Login/Logout dinâmico -->
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <div class="auth-links" style="color: white; font-weight: bold; font-size: 16px;">
+      <a href="signup.html">SIGN UP</a> | 
+      <a href="login.html">LOG IN</a>
+    </div>
+
+    <div class="user-area" style="display: none; align-items: center; gap: 12px; color: white; font-weight: bold; font-size: 16px;">
+      <span id="user-info"></span>
+      <div class="notificacoes">
+        <div class="icon-wrapper">
+          <img src="imagens/sino.png" alt="Notificações" class="icon-sino" style="width: 24px;">
+          <span class="contador" id="contador-notificacoes">2</span>
+        </div>
+       <div id="caixa-notificacoes" class="caixa-notificacoes oculto">
+          <p><strong>Ocorrência:</strong> aceite - Buraco na estrada</p>
+          <p><strong>Ocorrência:</strong> rejeitada - Falha no passeio</p>
+        </div>
       </div>
-          
-    </header>
+      <button id="logout-btn" style="display: none; background: none; border: none; color: white; font-weight: bold; font-size: 16px; cursor: pointer;">| Logout</button>
+    </div>
+  </div>
+</header>
+
   </div>
 
 
@@ -380,40 +380,36 @@
     const authLinks = document.querySelector(".auth-links");
     const userInfo = document.getElementById("user-info");
     const logoutBtn = document.getElementById("logout-btn");
-  
+    const userArea = document.querySelector(".user-area"); // <- NOVO
+
     if (userName) {
-      if (authLinks) authLinks.style.display = "none"; // Esconde "Sign Up | Log In"
-      if (userInfo) userInfo.textContent = `Olá, ${userName}`; // Mostra o nome
-      if (logoutBtn) logoutBtn.style.display = "inline"; // Mostra o botão Logout
+      if (authLinks) authLinks.style.display = "none";
+      if (userInfo) userInfo.textContent = `Olá, ${userName}`;
+      if (logoutBtn) logoutBtn.style.display = "inline";
+      if (userArea) userArea.style.display = "flex"; // <- MOSTRA user-area
+    } else {
+      if (userArea) userArea.style.display = "none"; // <- ESCONDE user-area
     }
-  
+
     if (logoutBtn) {
       logoutBtn.addEventListener("click", function () {
         localStorage.removeItem("userName");
         window.location.href = "index.html";
       });
     }
-  
-    // Scroll ao clicar no botão de seta
+
     const scrollBtn = document.getElementById("scrollButton");
     if (scrollBtn) {
       scrollBtn.addEventListener("click", function () {
         document.querySelector(".estatisticas").scrollIntoView({ behavior: "smooth" });
       });
     }
-  
-    // Atualiza estatísticas de satisfação
+    
     atualizarDisplaySatisfacao();
   };
-  </script>
-  
-  <script>
-  function toggleNotificacoes() {
-    const caixa = document.getElementById("caixa-notificacoes");
-    caixa.classList.toggle("oculto");
-  }
 </script>
 
-    
+
+ 
 </body>
 </html>
