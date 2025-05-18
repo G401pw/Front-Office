@@ -37,9 +37,21 @@
       </div>
 
       <!-- Área do usuário (aparece quando está logado) -->
-      <div class="user-area" style="display: flex; align-items: center; gap: 12px; margin-left: auto; color: white; font-weight: bold; font-size: 16px; padding-right: 30px;">
-        <span id="user-info"></span> 
-        <button id="logout-btn" style="display: none; background: none; border: none; color: white; font-weight: bold; font-size: 16px; cursor: pointer;">| Logout</button>
+      <span id="user-info"></span> 
+
+<div class="notificacoes">
+  <div class="icon-wrapper" onclick="toggleNotificacoes()">
+    <img src="imagens/sino.png" alt="Notificações" class="icon-sino">
+    <span class="contador" id="contador-notificacoes">2</span> <!-- Exemplo -->
+  </div>
+  <div id="caixa-notificacoes" class="caixa-notificacoes oculto">
+    <p><strong>Ocorrência:</strong> aceite - Buraco na estrada</p>
+    <p><strong>Ocorrência:</strong> rejeitada - Falha no passeio</p>
+  </div>
+</div>
+
+<button id="logout-btn" style="display: none; background: none; border: none; color: white; font-weight: bold; font-size: 16px; cursor: pointer;">| Logout</button>
+
       </div>
           
     </header>
@@ -395,6 +407,13 @@
   };
   </script>
   
+  <script>
+  function toggleNotificacoes() {
+    const caixa = document.getElementById("caixa-notificacoes");
+    caixa.classList.toggle("oculto");
+  }
+</script>
+
     
 </body>
 </html>

@@ -633,4 +633,41 @@
   margin-bottom: 10px; /* Ajuste o espaçamento inferior */
 }
 
+.icon-sino {
+  width: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.contador {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+.caixa-notificacoes {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.oculto {
+  display: none;
+}
+
+.notificacoes {
+  position: relative;
+  margin: 0 10px;
+}
 
