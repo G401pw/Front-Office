@@ -375,6 +375,33 @@
   </script>
 
 <script>
+  // Guardar as estatísticas fixas no localStorage (exceto satisfação dos cidadãos)
+  function guardarEstatisticasFixas() {
+    const estatisticas = document.querySelectorAll('.estatistica-box');
+    const chaves = [
+      'auditorias_realizadas',
+      'ocorrencias_reportadas',
+      'ocorrencias_resolvidas',
+      'tempo_medio_resposta'
+    ];
+
+    // Só percorre os 4 primeiros elementos (índices 0 a 3)
+    estatisticas.forEach((box, index) => {
+      if (index < chaves.length) {
+        const valor = box.querySelector('h3').textContent.trim();
+        localStorage.setItem(chaves[index], valor);
+      }
+    });
+  }
+
+  // Executar ao carregar a página, após tudo estar carregado
+  window.addEventListener('DOMContentLoaded', () => {
+    guardarEstatisticasFixas(); // guarda as 4 estatísticas
+    atualizarDisplaySatisfacao(); // função já existente, não será anulada
+  });
+</script>
+
+<script>
   window.onload = function () {
     const userName = localStorage.getItem("userName");
     const authLinks = document.querySelector(".auth-links");
