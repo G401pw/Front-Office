@@ -436,6 +436,27 @@
   };
 </script>
 
+<script>
+  function contarVisitaHoje() {
+    const hoje = new Date().toLocaleDateString(); // Ex: "19/05/2025"
+    const dataGuardada = localStorage.getItem("data_visitas_index");
+
+    // Se for um novo dia, reinicia o contador
+    if (dataGuardada !== hoje) {
+      localStorage.setItem("data_visitas_index", hoje);
+      localStorage.setItem("visitas_index_hoje", 1);
+    } else {
+      // Se for o mesmo dia, incrementa
+      let visitas = parseInt(localStorage.getItem("visitas_index_hoje")) || 0;
+      visitas++;
+      localStorage.setItem("visitas_index_hoje", visitas);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", contarVisitaHoje);
+</script>
+
+
 
  
 </body>
