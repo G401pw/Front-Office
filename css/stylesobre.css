@@ -89,36 +89,6 @@ nav ul li a {
     padding-right: 50px; /* Distância à direita, igual aos links de login */
 }
 
-/* Estilizar a seção sobre-nós */
-.sobre-nos {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white; /* Mantém o texto branco */
-    padding: 30px;
-    width: 60%;
-    text-align: center;
-}
-
-
-/* Ajustar os títulos e parágrafos */
-.sobre-nos h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.sobre-nos p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.sobre-nos h1, .sobre-nos p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
 /* Criar um efeito de escurecimento na imagem de fundo */
 body::before {
     content: "";
@@ -132,56 +102,40 @@ body::before {
     pointer-events: none; /* garante que não bloqueia interações */
 }
 
+/* Estilizar o container principal */
 .container {
-    width: 100%; /* Garante que o container ocupa toda a largura da página */
-    max-width: 80%; /* Mantém um limite para não ficar exageradamente largo */
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo */
-    text-align: left;
-    color: white;
+  width: 100%;
+  margin: 50px 0; /* Remove o centramento e usa margens apenas no topo e baixo */
+  padding: 0 50px; /* Adiciona padding nas laterais para evitar que o texto toque as bordas */
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
 
-
+/* Título principal */
 .titulo {
-    width: 100%;
-    text-align: left; /* Mantém o título à esquerda */
-    font-size: 28px;
-    font-weight: bold;
-    border-bottom: 2px solid white; /* Linha abaixo do título branco */
-    padding-bottom: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  color: white;
 }
 
+/* Texto corrido */
 .texto {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.6;
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: none; /* Remove a limitação de 800px */
-    text-align: justify; /* Justifica o texto para melhor legibilidade */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Mantém o texto visível sobre o fundo escuro */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+  text-align: left; /* Mantém o texto alinhado à esquerda */
 }
 
-.subtitulo {
-    margin-top: 40px;
-    font-size: 22px;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    text-align: left;
-    width: 100%;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 5px;
-}
-
-
+/* Estilo do mapa */
 .mapa {
-    width: 100%;
-    max-width: 800px;
-    height: 400px;
-    margin-top: 20px;
-    border: 2px solid rgb(240, 108, 0);
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  margin: 0 auto; /* Centraliza o mapa */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
-

@@ -538,94 +538,79 @@
 }
 
 /* FAQ */
+/* Garantir que a distância entre o gráfico e as FAQs seja suave */
+.grafico-distribuicao {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background-color: #fff8f1;
+}
+
 .faq {
-  background-color: #fff8f1; /* Fundo igual à parte superior */
+  margin-top: 0; /* Remove qualquer margem superior */
+  padding-top: 0; /* Remove qualquer padding superior extra */
+  background-color: #fff8f1;
   padding: 60px 40px;
   text-align: center;
 }
 
+/* FAQ */
 .faq h2 {
-  font-size: 2.2em; /* Tamanho reduzido para o título */
-  color: #a46834; /* Cor laranja */
+  font-size: 2.2em;
+  color: #a46834;
   font-weight: bold;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .faq-item {
   margin: 10px 0;
+  border: 1px solid #f4a261;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-/* Adiciona uma caixa de fundo para as perguntas */
 .faq-pergunta {
-  font-size: 1.1em; /* Tamanho reduzido da fonte */
-  color: #f4a261; /* Cor laranja para as perguntas */
-  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: #f4a261;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px; /* Adiciona um espaço entre a pergunta e o ícone */
-  background-color: #fff3e5; /* Cor de fundo suave */
-  padding: 12px 18px; /* Reduz a altura das caixas */
-  border-radius: 8px; /* Bordas arredondadas */
-  border: 1px solid #f4a261; /* Borda de cor laranja */
-  transition: background-color 0.3s, transform 0.3s; /* Adiciona transições para a interação */
+  background-color: #fff3e5;
+  padding: 12px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Efeito ao passar o mouse sobre a pergunta */
 .faq-pergunta:hover {
-  background-color: #f3ebe4; /* Muda a cor do fundo ao passar o mouse */
-  transform: scale(1.05); /* Um leve aumento ao passar o mouse */
+  background-color: #f3ebe4;
+  transform: scale(1.02);
 }
 
 .faq-pergunta i {
-  font-size: 1.1em; /* Tamanho ajustado para a seta */
+  font-size: 1.1em;
   transition: transform 0.3s;
 }
 
-/* Exibe ou esconde as respostas */
-.faq-resposta {
-  display: none;
-  font-size: 1em; /* Tamanho da fonte reduzido */
-  color: #333; /* Respostas em preto */
-  text-align: center;
-  line-height: 1.6; /* Melhora a legibilidade */
-  padding: 0 20px;
-}
-
-/* Adicionar efeito de rotação na seta */
 .faq-pergunta.open i {
   transform: rotate(180deg);
 }
 
-.faq-pergunta:hover {
-  background-color: #f8eee7; /* Muda o fundo ao passar o mouse */
-  transform: scale(1.05); /* Leve aumento ao passar o mouse */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+.faq-resposta {
+  display: none;
+  font-size: 1em;
+  color: #333;
+  text-align: left;
+  padding: 15px 18px;
+  background-color: #fff;
+  border-top: 1px solid #f4a261;
 }
 
 /* Remover a faixa de cor */
 .linha-decorativa {
-  display: none; /* Isso remove a faixa */
-}
-
-/* Ou, se deseja apenas alterar a cor da faixa, modifique a linha de cor */
-.linha-decorativa {
-  background-color: #f0f0f0; /* Altere para a cor que desejar */
-}
-
-/* Remover o espaço extra ou ajustar entre o gráfico e as perguntas frequentes */
-.grafico-distribuicao {
-  margin-bottom: 0px; /* Remove qualquer margem extra */
-  padding-bottom: 0px; /* Remove qualquer padding extra */
-}
-
-.faq {
-  margin-top: 20px; /* Ajuste o espaçamento se necessário */
-  background-color: #fff8f1; /* A mesma cor da parte de cima */
-  padding: 60px 40px;
-  text-align: center;
-  margin-top: 0; /* Ajuste o topo se necessário */
+  display: none;
 }
 
 /* Garantir que a distância entre o gráfico e as FAQs seja suave */
