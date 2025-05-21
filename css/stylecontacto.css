@@ -124,3 +124,42 @@ footer {
     height: auto;
     margin-right: 8px;  /* Espaço entre o ícone e o texto */
 }
+
+.notificacoes {
+  position: relative;
+}
+
+.caixa-notificacoes {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 999;
+}
+
+.notificacoes:hover .caixa-notificacoes {
+  display: block;
+}
+
+/* Ícone e contador */
+.icon-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.contador {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
