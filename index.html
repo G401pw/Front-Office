@@ -46,8 +46,6 @@
           <span class="contador" id="contador-notificacoes">2</span>
         </div>
        <div id="caixa-notificacoes" class="caixa-notificacoes oculto">
-          <p><strong>Ocorrência:</strong> aceite - Buraco na estrada</p>
-          <p><strong>Ocorrência:</strong> rejeitada - Falha no passeio</p>
         </div>
       </div>
       <button id="logout-btn" style="display: none; background: none; border: none; color: white; font-weight: bold; font-size: 16px; cursor: pointer;">| Logout</button>
@@ -457,6 +455,47 @@
 </script>
 
 
+<script>
+  
+  const notificacoesPadrao = [
+    { estado: "aceite", descricao: "Buraco na estrada" },
+    { estado: "rejeitada", descricao: "Falha no passeio" }
+  ];
+
+  function carregarNotificacoes() {
+    let notificacoes = JSON.parse(localStorage.getItem("notificacoes"));
+    if (!notificacoes || !Array.isArray(notificacoes) || notificacoes.length === 0) {
+      notificacoes = notificacoesPadrao;
+      localStorage.setItem("notificacoes", JSON.stringify(notificacoes));
+    }
+    return notificacoes;
+  }
+
+  function mostrarNotificacoes() {
+    const notificacoes = carregarNotificacoes();
+    const caixa = document.getElementById("caixa-notificacoes");
+    const contador = document.getElementById("contador-notificacoes");
+
+    caixa.innerHTML = ""; // limpa conteúdo
+    notificacoes.forEach(n => {
+      const p = document.createElement("p");
+      p.innerHTML = `<strong>Ocorrência:</strong> ${n.estado} - ${n.descricao}`;
+      caixa.appendChild(p);
+    });
+
+    if (contador) {
+      contador.textContent = notificacoes.length;
+    }
+  }
+
+  window.onload = function () {
+    mostrarNotificacoes();
+
+    // Teu código onload original (userName, authLinks, logout, scroll, etc) aqui
+    // ...
+  };
+</script>
+</body>
 
  
 </body>
