@@ -4,14 +4,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #f4f4f4;
-  }
-  
-  /* Cabeçalho */
-  header {
+}
+
+body {
+    background-color: #fff8f1; /* Ajustado para a mesma cor das FAQs, removendo o cinza #f4f4f4 */
+}
+
+/* Cabeçalho */
+header {
     display: flex;
     justify-content: space-between; /* Logo à esquerda, links ao centro e login/logout à direita */
     align-items: center;
@@ -19,56 +19,55 @@
     padding: 15px 50px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: relative;
-  }
+}
 
-  /* Logo */
-  .logo {
+/* Logo */
+.logo {
     display: flex;
     align-items: center;
     margin-right: auto; /* Isso alinha o logo à esquerda */
-  }
+}
 
-  .logo img {
+.logo img {
     height: 90px;
-  }
+}
 
-  /* Menu de navegação */
-  nav ul {
+/* Menu de navegação */
+nav ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
     justify-content: center; /* Alinha os links ao centro */
-  }
+}
 
-  nav ul li {
+nav ul li {
     margin: 0 15px;
-  }
+}
 
-  nav ul li a {
+nav ul li a {
     text-decoration: none;
-    color: white;
+    color: black; /* Cor ajustada para preto para melhor contraste com o fundo branco do header */
     font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  }
+}
 
-  /* Área de login/logout */
-  .user-area {
+/* Área de login/logout */
+.user-area {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: white;
+    color: black; /* Cor ajustada para preto */
     font-weight: bold;
     font-size: 16px;
     padding-right: 50px;
     margin-left: auto; /* Isso faz com que a área de login/logout fique à direita */
-  }
+}
 
-  /* Links de login e cadastro quando a sessão não está iniciada */
-  .auth-links {
+/* Links de login e cadastro quando a sessão não está iniciada */
+.auth-links {
     display: flex;
     gap: 15px;
-    color: white;
+    color: black; /* Cor ajustada para preto */
     font-weight: bold;
     margin-left: auto; /* Garante que os links vão para a direita */
     justify-content: flex-end; /* Garante que a área de login/cadastro esteja à direita */
@@ -76,26 +75,25 @@
     position: absolute;  /* Força a posição à direita no topo */
     right: 0;  /* Alinha à direita */
     padding-right: 50px; /* Adiciona um pequeno espaço à direita */
-  }
+}
 
-  .auth-links a {
+.auth-links a {
     text-decoration: none;
-    color: white;
+    color: black; /* Cor ajustada para preto */
     font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  }
+}
 
-  .auth-links a:hover {
+.auth-links a:hover {
     color: #f4a261;
-  }
+}
 
-  /* Quando o usuário está logado, oculta os links de signup/login */
-  .auth-links.hidden {
+/* Quando o usuário está logado, oculta os links de signup/login */
+.auth-links.hidden {
     display: none;
-  }
-  
-  /* Layout responsivo para o logo, links e área de usuário */
-  @media (max-width: 768px) {
+}
+
+/* Layout responsivo para o logo, links e área de usuário */
+@media (max-width: 768px) {
     header {
       flex-direction: column;
       align-items: flex-start;
@@ -120,19 +118,18 @@
       gap: 10px;
       position: relative;  /* Para que o posicionamento absoluto não afete o layout em telas pequenas */
     }
-  }
+}
 
-  /* VÍDEO HERO */
-  .hero video {
+/* VÍDEO HERO */
+.hero video {
     width: 100%;
     height: 600px;
     object-fit: cover;
-  }
-  
-  /* NOVA SECÇÃO DE ESTATÍSTICAS */
-/* Atualiza o fundo da secção estatísticas */
+}
+
+/* NOVA SECÇÃO DE ESTATÍSTICAS */
 .estatisticas {
-    background-color: #fff8f1; /* igual às outras */
+    background-color: #fff8f1; /* Já está correto */
     padding: 60px 40px;
     display: flex;
     flex-wrap: wrap;
@@ -153,7 +150,6 @@
     transition: transform 0.3s ease;
 }
 
-
 /* Torna responsivo para ecrãs pequenos */
 @media (max-width: 1000px) {
   .estatisticas {
@@ -170,53 +166,53 @@
     width: 90%;
   }
 }
+
 .titulo-atualizacoes {
     text-align: center;
     margin-bottom: 40px;
-  }
-  
-  .titulo-atualizacoes h2 {
+}
+
+.titulo-atualizacoes h2 {
     font-size: 2.8em;
     color: #a46834;
     font-weight: bold;
-  }
-  
-  .linha-decorativa {
+}
+
+.linha-decorativa {
     width: 60px;
     height: 4px;
     background-color: #f4a261;
     margin: 12px auto 20px auto;
     border-radius: 4px;
-  }
-  
-  .titulo-atualizacoes p {
+}
+
+.titulo-atualizacoes p {
     font-size: 1.1em;
     color: #444;
-  }
+}
 
-  
-  .estatistica-box:hover {
+.estatistica-box:hover {
     transform: translateY(-5px);
-  }
-  
-  .estatistica-box h3 {
+}
+
+.estatistica-box h3 {
     font-size: 42px;
     color: #a46834;
     margin: 0;
-  }
-  
-  .estatistica-box p {
+}
+
+.estatistica-box p {
     font-size: 16px;
     color: #333;
     margin-top: 10px;
-  }
+}
 
-  /* Adicione ao seu styles.css */
-  .estatistica-box:last-child {
+/* Adicione ao seu styles.css */
+.estatistica-box:last-child {
     position: relative;
-  }
+}
 
-  .estatistica-box:last-child::after {
+.estatistica-box:last-child::after {
     content: "Baseado em " attr(data-total) " avaliações";
     font-size: 12px;
     color: #666;
@@ -225,9 +221,9 @@
     width: 100%;
     left: 0;
     text-align: center;
-  }
-  
-  .icone-circulo {
+}
+
+.icone-circulo {
     background-color: #f4a261;
     color: white;
     width: 50px;
@@ -239,34 +235,34 @@
     justify-content: center;
     font-size: 22px;
 }
-  
-  /* ATUALIZAÇÕES */
-  .atualizacoes {
+
+/* ATUALIZAÇÕES */
+.atualizacoes {
     background-color: #fff8f1;
     padding: 60px 40px;
     text-align: center;
     color: #333;
-  }
-  
-  .atualizacoes h2 {
+}
+
+.atualizacoes h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #a46834;
-  }
-  
-  .atualizacoes p {
+}
+
+.atualizacoes p {
     font-size: 1.2em;
     margin-bottom: 40px;
-  }
-  
-  .noticias-cards {
+}
+
+.noticias-cards {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-  }
-  
-  .noticia {
+}
+
+.noticia {
     background-color: #fff3e5;
     border: 1px solid #f4a261;
     border-radius: 12px;
@@ -275,49 +271,48 @@
     transition: transform 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: left;
-  }
-  
-  .noticia:hover {
+}
+
+.noticia:hover {
     transform: translateY(-5px);
-  }
-  
-  .noticia .data {
+}
+
+.noticia .data {
     display: block;
     font-weight: bold;
     color: #a46834;
     margin-bottom: 10px;
     font-size: 1.1em;
-  }
-  
-  .noticia .texto {
+}
+
+.noticia .texto {
     font-size: 1em;
     color: #333;
-  }
-  
-  .grafico-distribuicao {
+}
+
+.grafico-distribuicao {
     padding: 60px 40px;
     background-color: #fff8f1;
     text-align: center;
     color: #333;
-  }
-  
-  .grafico-distribuicao h2 {
+}
+
+.grafico-distribuicao h2 {
     font-size: 2.5em;
     margin-bottom: 10px;
     color: #a46834;
-  }
-  
-  .grafico-distribuicao {
+}
+
+.grafico-distribuicao {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     column-gap: 30px; /* separação horizontal */
     row-gap: 20px; /* se for mobile ou wrap */
-  }
-  
+}
 
-  .grafico-container {
+.grafico-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -326,190 +321,179 @@
     flex-wrap: wrap;
     max-width: 900px;
     margin: 0 auto;
-  }
-  
-  #graficoDonut {
+}
+
+#graficoDonut {
     width: 300px !important;
     height: 300px !important;
     max-width: 100%;
     display: block;
     margin: 0 auto;
-  }
-  
+}
 
-  .legenda-grafico {
+.legenda-grafico {
     list-style: none;
     padding: 0;
     text-align: left;
-  }
-  
-  .legenda-grafico li {
+}
+
+.legenda-grafico li {
     margin-bottom: 10px;
     font-size: 1em;
-  }
-  
-  .legenda-grafico span {
+}
+
+.legenda-grafico span {
     display: inline-block;
     width: 15px;
     height: 15px;
     margin-right: 10px;
     vertical-align: middle;
     border-radius: 3px;
-  }
-  
-  canvas {
+}
+
+canvas {
     max-width: 320px;
     max-height: 320px;
     margin: auto;
-  }
-  
-  .grafico-header {
+}
+
+.grafico-header {
     text-align: center;
     margin-bottom: 40px;
-  }
-  
-  .grafico-header h2 {
+}
+
+.grafico-header h2 {
     font-size: 2.8em;
     color: #a46834;
     margin-bottom: 10px;
-  }
-  
-  .grafico-header p {
+}
+
+.grafico-header p {
     font-size: 1.2em;
     color: #333;
     margin: 0 auto;
     max-width: 800px;
-  }
-  
-  
-/* Estilo do botão centralizado */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
-/* Vídeo Hero */
+/* Estilo do botão centralizado */
 .topo-com-video {
-  position: relative;
-  height: 100vh;
+    position: relative;
+    height: 100vh;
 }
 
 .hero video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .avaliacao-contactos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 40px;
-  background-color: #fef6f0;
-  align-items: stretch; /* Isso faz com que ambos os lados tenham a mesma altura */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+    background-color: #fef6f0;
+    align-items: stretch; /* Isso faz com que ambos os lados tenham a mesma altura */
 }
 
-
 .avaliacao-form {
-  flex: 1;
-  min-width: 300px;
-  background: #fcefe4;
-  padding: 30px;
-  border-radius: 12px;
+    flex: 1;
+    min-width: 300px;
+    background: #fcefe4;
+    padding: 30px;
+    border-radius: 12px;
 }
 
 .avaliacao-form h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #a85d0c;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #a85d0c;
 }
 
 .avaliacao-form p {
-  margin-bottom: 20px;
-  color: #6c4c2d;
+    margin-bottom: 20px;
+    color: #6c4c2d;
 }
 
 .avaliacao-form label {
-  font-weight: bold;
-  margin-top: 10px;
-  display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
 }
 
 .avaliacao-form input,
 .avaliacao-form select,
 .avaliacao-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
 .avaliacao-form button {
-  background-color: #f39952;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #f39952;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .avaliacao-form button:hover {
-  background-color: #e78a3c;
+    background-color: #e78a3c;
 }
 
 .avaliacao-container {
-  flex: 1;
-  min-width: 300px;
-  background: #fcefe4;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
-  border: 1px solid #f4c198;
+    flex: 1;
+    min-width: 300px;
+    background: #fcefe4;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
+    border: 1px solid #f4c198;
 }
 
 /* Contactos */
 .contactos-lado-direito {
-  flex: 1.7;
-  min-width: 300px;
-  padding: 30px 20px;
-  background: #fcefe4;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
-  border: 1px solid #f4c198;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  /* Centraliza verticalmente */
-  align-items: center;      /* Centraliza horizontalmente */
-  text-align: center;
+    flex: 1.7;
+    min-width: 300px;
+    padding: 30px 20px;
+    background: #fcefe4;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
+    border: 1px solid #f4c198;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centraliza verticalmente */
+    align-items: center;      /* Centraliza horizontalmente */
+    text-align: center;
 }
 
 .contactos-lado-direito h3 {
-  margin-top: 15px;
-  margin-bottom: 5px;
-  color: #333;
-  font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 18px;
 }
 
 .contactos-lado-direito p {
-  margin: 2px 0 10px;
-  color: #555;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+    margin: 2px 0 10px;
+    color: #555;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .contactos-lado-direito img {
-  width: 18px;
+    width: 18px;
 }
 
 /* Altere as cores dos ícones de telefone e e-mail para castanho */
@@ -517,148 +501,180 @@
     color: #a46834 !important; /* Força a aplicação da cor castanha */
 }
 
-
-
 /* Mapa */
 .map-container {
-  margin-top: 10px;
-  width: 100%;
+    margin-top: 10px;
+    width: 100%;
 }
 
 .info-blocos {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .info-bloco {
-  flex: 1 1 200px;
-  min-width: 200px;
+    flex: 1 1 200px;
+    min-width: 200px;
 }
 
 /* FAQ */
-/* Garantir que a distância entre o gráfico e as FAQs seja suave */
 .grafico-distribuicao {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  background-color: #fff8f1;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: #fff8f1;
 }
 
 .faq {
-  margin-top: 0; /* Remove qualquer margem superior */
-  padding-top: 0; /* Remove qualquer padding superior extra */
-  background-color: #fff8f1;
-  padding: 60px 40px;
-  text-align: center;
+    margin-top: 0; /* Remove qualquer margem superior */
+    padding-top: 0; /* Remove qualquer padding superior extra */
+    background-color: #fff8f1;
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 800px; /* Limita a largura da seção FAQ */
+    margin: 0 auto; /* Centraliza a seção na página */
 }
 
 /* FAQ */
 .faq h2 {
-  font-size: 2.2em;
-  color: #a46834;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2.2em;
+    color: #a46834;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .faq-item {
-  margin: 10px 0;
-  border: 1px solid #f4a261;
-  border-radius: 8px;
-  overflow: hidden;
+    margin: 10px 0;
+    border: 1px solid #f4a261;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .faq-pergunta {
-  font-size: 1.1em;
-  color: #f4a261;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff3e5;
-  padding: 12px 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.1em;
+    color: #f4a261;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff3e5;
+    padding: 12px 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .faq-pergunta:hover {
-  background-color: #f3ebe4;
-  transform: scale(1.02);
+    background-color: #f3ebe4;
+    transform: scale(1.02);
 }
 
 .faq-pergunta i {
-  font-size: 1.1em;
-  transition: transform 0.3s;
+    font-size: 1.1em;
+    transition: transform 0.3s;
 }
 
 .faq-pergunta.open i {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .faq-resposta {
-  display: none;
-  font-size: 1em;
-  color: #333;
-  text-align: left;
-  padding: 15px 18px;
-  background-color: #fff;
-  border-top: 1px solid #f4a261;
+    display: none;
+    font-size: 1em;
+    color: #333;
+    text-align: left;
+    padding: 15px 18px;
+    background-color: #fff;
+    border-top: 1px solid #f4a261;
 }
 
 /* Remover a faixa de cor */
 .linha-decorativa {
-  display: none;
+    display: none;
 }
 
 /* Garantir que a distância entre o gráfico e as FAQs seja suave */
 .grafico-container {
-  margin-bottom: 10px; /* Ajuste o espaçamento inferior */
+    margin-bottom: 10px; /* Ajuste o espaçamento inferior */
 }
 
 .notificacoes {
-  position: relative;
+    position: relative;
 }
 
 .caixa-notificacoes {
-  position: absolute;
-  top: 30px;
-  right: 0;
-  background: white;
-  color: black;
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 250px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  display: none;
-  z-index: 999;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 250px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 999;
 }
 
 .notificacoes:hover .caixa-notificacoes {
-  display: block;
+    display: block;
 }
-
 
 /* Ícone e contador */
 .icon-wrapper {
-  position: relative;
-  cursor: pointer;
+    position: relative;
+    cursor: pointer;
 }
 
 .contador {
-  position: absolute;
-  top: -6px;
-  right: -10px;
-  background: red;
-  color: white;
-  font-size: 12px;
-  border-radius: 50%;
-  padding: 2px 6px;
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 6px;
 }
 
 /* Hover para mostrar a caixa */
 .notificacoes:hover .caixa-notificacoes {
-  display: block;
+    display: block;
+}
+
+/* Estilos para a página "Sobre Nós" */
+.sobre-container {
+    width: 100%;
+    margin: 50px 0;
+    padding: 60px 40px;
+    background-color: #fff8f1; /* Cor de fundo igual à da seção FAQ */
+    display: flex;
+    flex-direction: column;
+    color: #333; /* Cor do texto ajustada para melhor contraste */
+}
+
+.sobre-titulo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #a46834; /* Cor ajustada para combinar com o tema */
+}
+
+.sobre-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.sobre-mapa {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
