@@ -9,6 +9,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
+    <div id="feedback-message" class="feedback-message"></div>
     <div class="login-container">
         <div class="login-box">
             <a href="index.html">
@@ -56,8 +57,10 @@
                 localStorage.setItem("userName", email.split('@')[0]);
                 localStorage.setItem("userEmail", email);
 
-                alert(`Bem-vindo, ${email.split('@')[0]}!`);
-                window.location.href = "Ocorrencias.html";  // Redireciona para a página de ocorrências
+                showFeedbackMessage(`Bem-vindo, ${email.split('@')[0]}!`, 'success', 2000);
+                setTimeout(() => {
+                window.location.href = "Ocorrencias.html";
+                }, 2000);
 
             } else {
                 alert("Credenciais inválidas.");
@@ -72,13 +75,17 @@
 
             // Verifica se o email do Google está na lista de autorizados
             if (emailAutorizado.includes(emailGoogle)) {
-                alert(`Bem-vindo, ${data.name}!`);
+                showFeedbackMessage(`Bem-vindo, ${data.name}!`, 'success', 2000);
+
+                setTimeout(() => {
+                window.location.href = "index.html";
+                }, 2000);
 
                 // Armazenando nome e email no localStorage
                 localStorage.setItem("userName", nomeGoogle);
                 localStorage.setItem("userEmail", emailGoogle);
 
-                window.location.href = "index.html";  // Redireciona para a página de ocorrências
+               
             } else {
                 alert("Este email não está autorizado a fazer login.");
             }
@@ -100,6 +107,17 @@
                 }
             );
         };
+
+        function showFeedbackMessage(message, type = 'success', duration = 3000) {
+  const feedbackMessage = document.getElementById('feedback-message');
+  feedbackMessage.innerText = message;
+  feedbackMessage.className = 'feedback-message ' + type; // 'success', 'warning', etc
+  feedbackMessage.style.display = 'block';
+
+  setTimeout(() => {
+    feedbackMessage.style.display = 'none';
+  }, duration);
+}
     </script>
 </body>
 </html>
