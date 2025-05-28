@@ -9,7 +9,9 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
+    <!-- Mensagem de feedback -->
     <div id="feedback-message" class="feedback-message"></div>
+
     <div class="login-container">
         <div class="login-box">
             <a href="index.html">
@@ -25,7 +27,7 @@
                 
                 <button type="submit" class="login-btn">Log in</button>
             </form>
-    
+
             <!-- Google Sign-In -->
             <div class="google-login">
                 <div id="g_id_onload"
@@ -36,62 +38,56 @@
             </div>
         </div>
 
-        <!-- Imagem lateral -->
         <div class="image-container"></div>
     </div>
 
     <script>
-        const emailAutorizado = ["ljvieirafernandes@gmail.com", "edunas04@gmail.com", "joaninharibeiro2004@gmail.com", "gpiaia@hotmail.com", "franciscaribeiro200@gmail.com", "raquel.pereira.cardoso@gmail.com"];
+        const emailAutorizado = [
+            "ljvieirafernandes@gmail.com",
+            "edunas04@gmail.com",
+            "joaninharibeiro2004@gmail.com",
+            "gpiaia@hotmail.com",
+            "franciscaribeiro200@gmail.com",
+            "raquel.pereira.cardoso@gmail.com"
+        ];
         const senhaAutorizada = "1234567890";
 
-        // Função para verificar email e senha
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
             
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
-            
-            // Verifica se o email está na lista de autorizados e a senha está correta
+
             if (emailAutorizado.includes(email) && password === senhaAutorizada) {
-                // Armazena no localStorage o nome do usuário
                 localStorage.setItem("userName", email.split('@')[0]);
                 localStorage.setItem("userEmail", email);
 
-                showFeedbackMessage(`Bem-vindo, ${email.split('@')[0]}!`, 'success', 2000);
+                showFeedbackMessage(`Bem-vindo, ${email.split('@')[0]}!`, 'success');
                 setTimeout(() => {
-                window.location.href = "Ocorrencias.html";
+                    window.location.href = "Ocorrencias.html";
                 }, 2000);
-
             } else {
-                alert("Credenciais inválidas.");
+                showFeedbackMessage("Credenciais inválidas.", 'error');
             }
         });
 
-        // Função de login com o Google
         function handleCredentialResponse(response) {
             const data = JSON.parse(atob(response.credential.split('.')[1]));
             const emailGoogle = data.email;
             const nomeGoogle = data.name;
 
-            // Verifica se o email do Google está na lista de autorizados
             if (emailAutorizado.includes(emailGoogle)) {
-                showFeedbackMessage(`Bem-vindo, ${data.name}!`, 'success', 2000);
-
-                setTimeout(() => {
-                window.location.href = "index.html";
-                }, 2000);
-
-                // Armazenando nome e email no localStorage
+                showFeedbackMessage(`Bem-vindo, ${data.name}!`, 'success');
                 localStorage.setItem("userName", nomeGoogle);
                 localStorage.setItem("userEmail", emailGoogle);
-
-               
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 2000);
             } else {
-                alert("Este email não está autorizado a fazer login.");
+                showFeedbackMessage("Este email não está autorizado a fazer login.", 'error');
             }
         }
 
-        // Inicializa o botão do Google
         window.onload = function () {
             google.accounts.id.initialize({
                 client_id: "723281601761-a8uc1h6aftjl6sn6jdbtc2h7o07no9dm.apps.googleusercontent.com",
@@ -108,16 +104,16 @@
             );
         };
 
-        function showFeedbackMessage(message, type = 'success', duration = 3000) {
-  const feedbackMessage = document.getElementById('feedback-message');
-  feedbackMessage.innerText = message;
-  feedbackMessage.className = 'feedback-message ' + type; // 'success', 'warning', etc
-  feedbackMessage.style.display = 'block';
+        function showFeedbackMessage(message, type = 'success') {
+            const feedbackMessage = document.getElementById('feedback-message');
+            feedbackMessage.innerHTML = message;
+            feedbackMessage.className = 'feedback-message ' + type;
+            feedbackMessage.style.display = 'flex';
 
-  setTimeout(() => {
-    feedbackMessage.style.display = 'none';
-  }, duration);
-}
+            setTimeout(() => {
+                feedbackMessage.style.display = 'none';
+            }, 3000);
+        }
     </script>
 </body>
 </html>
