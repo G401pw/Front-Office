@@ -461,19 +461,21 @@ canvas {
 
 /* Contactos */
 .contactos-lado-direito {
-    flex: 1.7;
-    min-width: 300px;
-    padding: 30px 20px;
-    background: #fcefe4;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 183, 115, 0.3);
-    border: 1px solid #f4c198;
+    flex: 1;                 /* igual ao .avaliacao-container */
+    min-width: 300px;        /* igual */
+    background: #fcefe4;     /* igual */
+    padding: 30px;           /* igual */
+    border-radius: 12px;     /* igual */
+    box-shadow: 0 0 10px rgba(255, 183, 115, 0.3); /* igual */
+    border: 1px solid #f4c198; /* igual */
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Centraliza verticalmente */
-    align-items: center;      /* Centraliza horizontalmente */
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
+
+
 
 .contactos-lado-direito h3 {
     margin-top: 15px;
