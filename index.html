@@ -38,7 +38,7 @@
       <a href="login.html">LOG IN</a>
     </div>
 
-    <div class="user-area" style="display: none; align-items: center; gap: 12px; color: white; font-weight: bold; font-size: 16px;">
+    <div class="user-area" style="display: flex; align-items: center; gap: 12px; color: white; font-weight: bold; font-size: 16px;">
       <span id="user-info"></span>
       <div class="notificacoes">
         <div class="icon-wrapper">
@@ -378,17 +378,7 @@
   </section>
 
   <script>
-    // Armazenamento das avaliações
-    let avaliacoes = JSON.parse(localStorage.getItem('avaliacoes')) || [];
-    
-    // Valores correspondentes a cada avaliação
-    const valoresAvaliacao = {
-      'Excelente': 100,
-      'Bom': 75,
-      'Razoável': 50,
-      'Mau': 25
-    };
-  
+
     // Função para calcular a satisfação média
     function calcularSatisfacao() {
       if (avaliacoes.length === 0) return 0; // Valor padrão se não houver avaliações
@@ -467,28 +457,45 @@
 </script>
 
 <script>
-  window.onload = function () {
-    const userName = localStorage.getItem("userName");
-    const authLinks = document.querySelector(".auth-links");
-    const userInfo = document.getElementById("user-info");
-    const logoutBtn = document.getElementById("logout-btn");
-    const userArea = document.querySelector(".user-area"); // <- NOVO
+  window.onload = function() {
+  // Código para mostrar utilizador logado e controlo de login/logout
+  const userName = localStorage.getItem("userName");
+  const authLinks = document.querySelector(".auth-links");
+  const userInfo = document.getElementById("user-info");
+  const logoutBtn = document.getElementById("logout-btn");
+  const userArea = document.querySelector(".user-area");
 
-    if (userName) {
-      if (authLinks) authLinks.style.display = "none";
-      if (userInfo) userInfo.textContent = `Olá, ${userName}`;
-      if (logoutBtn) logoutBtn.style.display = "inline";
-      if (userArea) userArea.style.display = "flex"; // <- MOSTRA user-area
-    } else {
-      if (userArea) userArea.style.display = "none"; // <- ESCONDE user-area
-    }
+  if (userName) {
+    if (authLinks) authLinks.style.display = "none";
+    if (userInfo) userInfo.textContent = `Olá, ${userName}`;
+    if (logoutBtn) logoutBtn.style.display = "inline";
+    if (userArea) userArea.style.display = "flex";
+  } else {
+    if (authLinks) authLinks.style.display = "flex";
+    if (userArea) userArea.style.display = "none";
+  }
 
-    if (logoutBtn) {
-      logoutBtn.addEventListener("click", function () {
-        localStorage.removeItem("userName");
-        window.location.href = "index.html";
-      });
-    }
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("userName");
+      window.location.href = "index.html";
+    });
+  }
+
+  // Código para mostrar notificações
+  mostrarNotificacoes();
+
+  // Código para outras funcionalidades no onload (scroll, estatísticas, etc)
+  const scrollBtn = document.getElementById("scrollButton");
+  if (scrollBtn) {
+    scrollBtn.addEventListener("click", function () {
+      document.querySelector(".estatisticas").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  atualizarDisplaySatisfacao();
+};
+
 
     const scrollBtn = document.getElementById("scrollButton");
     if (scrollBtn) {
@@ -498,7 +505,6 @@
     }
     
     atualizarDisplaySatisfacao();
-  };
 </script>
 
 <script>
@@ -555,12 +561,9 @@
     }
   }
 
-  window.onload = function () {
-    mostrarNotificacoes();
 
     // Teu código onload original (userName, authLinks, logout, scroll, etc) aqui
     // ...
-  };
 </script>
 </body>
 

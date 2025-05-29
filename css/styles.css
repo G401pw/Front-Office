@@ -53,7 +53,7 @@ nav ul li a {
 
 /* Área de login/logout */
 .user-area {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 12px;
     color: black; /* Cor ajustada para preto */
@@ -724,3 +724,26 @@ canvas {
 .feedback-message button:hover {
   background: #e6e6e6;
 }
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding-left: 0;
+  margin: 0;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+

@@ -1,3 +1,13 @@
+header {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    justify-content: flex-start; /* Alinha tudo à esquerda */
+    gap: 50px; /* Espaçamento entre elementos do header */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,24 +16,58 @@
 }
 
 .logo {
-    width: 80px;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 250px; /* Espaço após o logo */
 }
 
-/* Estilo do menu de navegação */
-nav ul li a {
-    text-decoration: none;
-    color: black; /* Ajuste para garantir que a cor do texto seja preta */
-    font-weight: bold;
-    text-shadow: none;  /* Remover o sombreado do texto */
+.logo img {
+    height: 80px;
+    margin-right: 10px;
 }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding-left: 0;
+    margin: 0;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+
 
 /* Links de signup/login com separador | */
+.auth-links {
+    display: flex;
+    gap: 8px;
+    color: black;
+    font-weight: bold;
+    margin-left: auto; /* Garante alinhamento à direita */
+    padding-right: 50px;
+}
+
 .auth-links a {
     text-decoration: none;
-    color: black; /* Garante que SIGN UP e LOG IN fiquem pretos */
+    color: black;
     font-weight: bold;
-    text-shadow: none;  /* Remover o sombreado */
+}
+
+.auth-links a:hover {
+    color: #f4a261; /* Laranja para hover */
 }
 
 /* Garantir que o separador "|" fique com a cor preta */
@@ -52,6 +96,17 @@ footer {
     text-align: center;  /* Alinha o conteúdo dentro da seção ao centro */
     flex: 1;
     min-width: 200px;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: auto;
+    padding-right: 50px;
 }
 
 /*Títulos*/
@@ -163,3 +218,31 @@ footer {
   border-radius: 50%;
   padding: 2px 6px;
 }
+
+nav ul li a {
+    text-transform: capitalize;
+}
+
+nav ul {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+  gap: 30px !important;
+  align-items: center !important;
+}
+
+nav ul li {
+  margin: 0 15px !important;
+  list-style: none !important;
+}
+
+nav ul li a {
+  text-decoration: none !important;
+  color: black !important;
+  font-weight: bold !important;
+  text-transform: capitalize !important;
+}
+
+

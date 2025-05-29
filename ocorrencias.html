@@ -125,23 +125,31 @@
 
     <script>
         window.onload = function () {
-        const userName = localStorage.getItem("userName");
-        const authLinks = document.querySelector(".auth-links");
-        const userInfo = document.getElementById("user-info");
-        const logoutBtn = document.getElementById("logout-btn");
-        
-        if (userName) {
-            if (authLinks) authLinks.style.display = "none"; // Esconde "Sign Up | Log In"
-            if (userInfo) userInfo.textContent = `Olá, ${userName}`; // Mostra o nome
-            if (logoutBtn) logoutBtn.style.display = "inline"; // Mostra o botão Logout
-        }
-        
-        if (logoutBtn) {
-            logoutBtn.addEventListener("click", function () {
-            localStorage.removeItem("userName");
-            window.location.href = "index.html";
-            });
-        }
+  const userName = localStorage.getItem("userName");
+  const authLinks = document.querySelector(".auth-links");
+  const userInfo = document.getElementById("user-info");
+  const logoutBtn = document.getElementById("logout-btn");
+  const userArea = document.querySelector(".user-area");
+  const notificacoes = document.querySelector(".notificacoes");
+
+  if (userName) {
+    if (authLinks) authLinks.style.display = "none"; // Oculta login/signup
+    if (userInfo) userInfo.textContent = `Olá, ${userName}`;
+    if (logoutBtn) logoutBtn.style.display = "inline";
+    if (userArea) userArea.style.display = "flex";
+    if (notificacoes) notificacoes.style.display = "block";  // Mostra o sino
+  } else {
+    if (authLinks) authLinks.style.display = "flex"; // Mostra login/signup
+    if (userArea) userArea.style.display = "none";
+    if (notificacoes) notificacoes.style.display = "none";  // Esconde o sino
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("userName");
+      window.location.href = "index.html";
+    });
+  }
         
         // Scroll ao clicar no botão de seta
         const scrollBtn = document.getElementById("scrollButton");
