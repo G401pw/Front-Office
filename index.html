@@ -253,14 +253,14 @@
         <label for="email">Email:</label>
         <input type="email" id="email" placeholder="O seu email" />
 
-        <label for="avaliacao">Como avalia o nosso serviço?</label>
         <select id="avaliacao">
-          <option>Selecione</option>
-          <option>Excelente</option>
-          <option>Bom</option>
-          <option>Razoável</option>
-          <option>Mau</option>
+        <option value="">Selecione</option>
+        <option value="Excelente">Excelente</option>
+        <option value="Bom">Bom</option>
+        <option value="Razoável">Razoável</option>
+        <option value="Mau">Mau</option>
         </select>
+
 
         <label for="comentarios">Comentários adicionais:</label>
         <textarea id="comentarios" placeholder="Escreva aqui a sua opinião..."></textarea>
@@ -274,65 +274,67 @@
 
   <!-- SCRIPT PARA AVALIAÇÃO -->
   <script>
-    let avaliacoes = JSON.parse(localStorage.getItem('avaliacoes')) || [];
+  const valoresAvaliacao = {
+    'Excelente': 100,
+    'Bom': 75,
+    'Razoável': 50,
+    'Mau': 25
+  };
 
-    const valoresAvaliacao = {
-      'Excelente': 100,
-      'Bom': 75,
-      'Razoável': 50,
-      'Mau': 25
-    };
+  let avaliacoes = JSON.parse(localStorage.getItem('avaliacoes')) || [];
 
-    function showFeedbackMessage(message, type = 'success') {
-      const feedbackMessage = document.getElementById('feedback-message');
-      feedbackMessage.innerHTML = message;
-      feedbackMessage.className = 'feedback-message ' + type;
-      feedbackMessage.style.display = 'flex';
+  function showFeedbackMessage(message, type = 'success') {
+    const feedbackMessage = document.getElementById('feedback-message');
+    feedbackMessage.innerHTML = message;
+    feedbackMessage.className = 'feedback-message ' + type;
+    feedbackMessage.style.display = 'flex';
 
-      setTimeout(() => {
-        feedbackMessage.style.display = 'none';
-      }, 3000);
+    setTimeout(() => {
+      feedbackMessage.style.display = 'none';
+    }, 3000);
+  }
+
+  function calcularSatisfacao() {
+    if (avaliacoes.length === 0) return 0;
+    const total = avaliacoes.reduce((sum, av) => sum + valoresAvaliacao[av.avaliacao], 0);
+    return Math.round(total / avaliacoes.length);
+  }
+
+  function atualizarDisplaySatisfacao() {
+    const percentagem = calcularSatisfacao();
+    const box = document.querySelector('.estatistica-box:last-child');
+    if (box) {
+      box.querySelector('h3').textContent = `${percentagem}%`;
+      box.setAttribute('data-total', avaliacoes.length);
     }
+  }
 
-    function calcularSatisfacao() {
-      if (avaliacoes.length === 0) return 0;
-      const total = avaliacoes.reduce((sum, av) => sum + valoresAvaliacao[av.avaliacao], 0);
-      return Math.round(total / avaliacoes.length);
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    atualizarDisplaySatisfacao();
 
-    function atualizarDisplaySatisfacao() {
-      const percentagem = calcularSatisfacao();
-      const box = document.querySelector('.estatistica-box:last-child');
-      if (box) {
-        box.querySelector('h3').textContent = `${percentagem}%`;
-        box.setAttribute('data-total', avaliacoes.length);
-      }
-    }
-
-    document.querySelector('.avaliacao-form').addEventListener('submit', function(e) {
+    const form = document.querySelector('.avaliacao-form');
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
       const avaliacao = document.getElementById('avaliacao').value;
-      const comentarios = document.getElementById('comentarios').value;
+      const comentarios = document.getElementById('comentarios').value.trim();
 
-      if (avaliacao === 'Selecione') {
+      if (avaliacao === '') {
         showFeedbackMessage('Por favor, selecione uma avaliação', 'warning');
         return;
       }
 
       avaliacoes.push({ nome, email, avaliacao, comentarios, data: new Date() });
       localStorage.setItem('avaliacoes', JSON.stringify(avaliacoes));
-
       atualizarDisplaySatisfacao();
-      this.reset();
-
+      form.reset();
       showFeedbackMessage('Obrigado pela sua avaliação!', 'success');
     });
+  });
+</script>
 
-    window.addEventListener('DOMContentLoaded', atualizarDisplaySatisfacao);
-  </script>
 </body>
 
       <!-- CONTACTOS + REDES + MAPA (lado direito) -->
@@ -395,38 +397,6 @@
       box.setAttribute('data-total', avaliacoes.length);
     }
   
-    // Manipulador do formulário
-    document.querySelector('.avaliacao-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const avaliacao = document.getElementById('avaliacao').value;
-      const comentarios = document.getElementById('comentarios').value;
-      
-      if (avaliacao === 'Selecione') {
-        alert('Por favor, selecione uma avaliação');
-        return;
-      }
-      
-      // Adiciona a nova avaliação
-      avaliacoes.push({ nome, email, avaliacao, comentarios, data: new Date() });
-      
-      // Armazena no localStorage
-      localStorage.setItem('avaliacoes', JSON.stringify(avaliacoes));
-      
-      // Atualiza a exibição
-      atualizarDisplaySatisfacao();
-      
-      // Limpa o formulário
-      this.reset();
-      
-      // Feedback ao usuário
-      alert('Obrigado pela sua avaliação!');
-    });
-  
-    // Atualiza a satisfação quando a página carrega
-    window.addEventListener('DOMContentLoaded', atualizarDisplaySatisfacao);
   </script>
 
 <script>
@@ -495,7 +465,6 @@
 
   atualizarDisplaySatisfacao();
 };
-
 
     const scrollBtn = document.getElementById("scrollButton");
     if (scrollBtn) {
