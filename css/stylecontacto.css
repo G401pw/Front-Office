@@ -2,7 +2,7 @@ header {
     display: flex;
     align-items: center;
     background: white;
-    padding: 15px 50px;
+    padding: 10px -5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     justify-content: flex-start; /* Alinha tudo à esquerda */
     gap: 50px; /* Espaçamento entre elementos do header */
