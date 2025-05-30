@@ -26,38 +26,35 @@ header {
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    padding-left: 0;
-    margin: 0;
-    align-items: center;
-    flex-wrap: nowrap;
+  list-style: none;
+  display: flex;
 }
 
+
 nav ul li {
-  margin: 0;
+  margin: 0 15px;
 }
+
 
 
 nav ul li a {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  text-transform: capitalize;
 }
 
 
 
 /* Links de signup/login com separador | */
 .auth-links {
-    display: flex;
-    gap: 8px;
-    color: black;
-    font-weight: bold;
-    margin-left: auto; /* Garante alinhamento à direita */
-    padding-right: 50px;
+  display: flex;
+  gap: 15px;
+  color: black;
+  font-weight: bold;
+  margin-left: auto;
+  padding-right: 50px;
 }
+
 
 .auth-links a {
     text-decoration: none;
@@ -106,7 +103,7 @@ footer {
     font-weight: bold;
     font-size: 16px;
     margin-left: auto;
-    padding-right: 50px;
+    padding-right: 0px;
 }
 
 /*Títulos*/
@@ -218,3 +215,4 @@ footer {
   border-radius: 50%;
   padding: 2px 6px;
 }
+

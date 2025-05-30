@@ -64,7 +64,13 @@
 
                 showFeedbackMessage(`Bem-vindo, ${email.split('@')[0]}!`, 'success');
                 setTimeout(() => {
-                    window.location.href = "Ocorrencias.html";
+                    const destino = localStorage.getItem("redirectAfterLogin");
+                    if (destino) {
+                        localStorage.removeItem("redirectAfterLogin"); // Limpa o destino guardado
+                        window.location.href = destino;
+                    } else {
+                        window.location.href = "index.html"; // Redireciona normalmente se não houver destino guardado
+                    }
                 }, 2000);
             } else {
                 showFeedbackMessage("Credenciais inválidas.", 'error');
@@ -81,7 +87,13 @@
                 localStorage.setItem("userName", nomeGoogle);
                 localStorage.setItem("userEmail", emailGoogle);
                 setTimeout(() => {
-                    window.location.href = "index.html";
+                    const destino = localStorage.getItem("redirectAfterLogin");
+                    if (destino) {
+                        localStorage.removeItem("redirectAfterLogin");
+                        window.location.href = destino;
+                    } else {
+                        window.location.href = "index.html";
+                    }
                 }, 2000);
             } else {
                 showFeedbackMessage("Este email não está autorizado a fazer login.", 'error');

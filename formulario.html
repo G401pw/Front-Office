@@ -30,8 +30,19 @@
 
     <div class="user-area" style="display: flex; align-items: center; gap: 12px; margin-left: auto; color: black; font-weight: bold; font-size: 16px; padding-right: 30px;">
       <span id="user-info"></span>
+      <div class="notificacoes">
+        <div class="icon-wrapper">
+          <img src="imagens/sino.png" alt="Notificações" class="icon-sino" style="width: 24px;">
+          <span class="contador" id="contador-notificacoes">2</span>
+        </div>
+        <div id="caixa-notificacoes" class="caixa-notificacoes oculto">
+          <p><strong>Ocorrência:</strong> aceite - Buraco na estrada</p>
+          <p><strong>Ocorrência:</strong> rejeitada - Falha no passeio</p>
+        </div>
+      </div>
       <button id="logout-btn" style="display: none; background: none; border: none; color: black; font-weight: bold; font-size: 16px; cursor: pointer;">Logout</button>
     </div>
+
   </header>
 
   <!-- Cabeçalho -->
@@ -151,11 +162,19 @@
       const authLinks = document.querySelector(".auth-links");
       const userInfo = document.getElementById("user-info");
       const logoutBtn = document.getElementById("logout-btn");
+      const userArea = document.querySelector(".user-area");
+      const notificacoes = document.querySelector(".notificacoes");
 
       if (userName) {
         if (authLinks) authLinks.style.display = "none";
         if (userInfo) userInfo.textContent = `Olá, ${userName}`;
         if (logoutBtn) logoutBtn.style.display = "inline";
+        if (userArea) userArea.style.display = "flex";
+        if (notificacoes) notificacoes.style.display = "block";  // mostra o sino
+      } else {
+        if (authLinks) authLinks.style.display = "flex";
+        if (userArea) userArea.style.display = "none";
+        if (notificacoes) notificacoes.style.display = "none";  // esconde o sino
       }
 
       if (logoutBtn) {
