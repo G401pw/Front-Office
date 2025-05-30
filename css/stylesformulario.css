@@ -72,3 +72,22 @@ nav ul li a {
     background-color: #218838; /* Efeito ao passar o rato */
 }
 
+.feedback-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  z-index: 9999;
+}
+
