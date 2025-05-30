@@ -51,7 +51,7 @@
         
         <!-- Tipo de Ocorrência -->
         <div class="mb-3">
-          <label for="tipo" class="form-label">Tipo de Ocorrência:</label>
+          <label for="tipo" class="form-label">Tipo de Ocorrência: <span style="color: red;" title="Este campo é obrigatório">*</span></label>
           <select id="tipo" name="tipo" class="form-select">
             <option value="Buracos na Via Pública">Buracos na Via Pública</option>
             <option value="Postes caídos ou inclinados">Postes caídos ou inclinados</option>
@@ -66,14 +66,14 @@
         <h5>Localização</h5>
         <!-- Morada -->
         <div class="mb-3">
-          <label for="morada" class="form-label">Morada:</label>
+          <label for="morada" class="form-label">Morada: <span style="color: red;" title="Este campo é obrigatório">*</span></label>
           <input type="text" id="morada" name="morada" class="form-control" required>
         </div>
 
         <!-- Cidade e Código Postal -->
         <div class="row">
           <div class="col-md-6">
-            <label for="cidade" class="form-label">Cidade:</label>
+            <label for="cidade" class="form-label">Cidade:<span style="color: red;" title="Este campo é obrigatório">*</span></label>
             <select id="cidade" name="cidade" class="form-select" required>
               <option value="">Selecione...</option>
               <option value="Braga">Braga</option>
@@ -81,7 +81,7 @@
             </select>
           </div>
           <div class="col-md-6">
-            <label for="codigo_postal" class="form-label">Código Postal (Opcional):</label>
+            <label for="codigo_postal" class="form-label">Código Postal:</label>
             <input type="text" id="codigo_postal" name="codigo_postal" class="form-control">
           </div>
         </div>
@@ -98,7 +98,7 @@
 
         <!-- Upload -->
         <div class="mb-3 mt-3">
-          <label for="ficheiro" class="form-label">Anexar Imagens ou Ficheiros:</label>
+          <label for="ficheiro" class="form-label">Anexar Imagens ou Ficheiros: <span style="color: red;" title="Este campo é obrigatório">*</span></label>
           <input type="file" id="ficheiro" name="ficheiros[]" class="form-control" multiple required>
         </div>
 
