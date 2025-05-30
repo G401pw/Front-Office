@@ -90,6 +90,11 @@
         <h3>950</h3>
         <p>Ocorrências Resolvidas</p>
       </div>
+      <div class="estatistica-box" id="box-em-analise">
+        <div class="icone-circulo"><i class="fas fa-hourglass-half"></i></div>
+        <h3>0</h3>
+        <p>Ocorrências em Análise</p>
+      </div>
       <div class="estatistica-box">
         <div class="icone-circulo"><i class="fas fa-clock"></i></div>
         <h3>48h</h3>
@@ -404,11 +409,13 @@
   function guardarEstatisticasFixas() {
     const estatisticas = document.querySelectorAll('.estatistica-box');
     const chaves = [
-      'auditorias_realizadas',
-      'ocorrencias_reportadas',
-      'ocorrencias_resolvidas',
-      'tempo_medio_resposta'
+    'auditorias_realizadas',
+    'ocorrencias_reportadas',
+    'ocorrencias_resolvidas',
+    'tempo_medio_resposta',
+    'ocorrencias_em_analise'
     ];
+
 
     // Só percorre os 4 primeiros elementos (índices 0 a 3)
     estatisticas.forEach((box, index) => {
@@ -423,6 +430,24 @@
   window.addEventListener('DOMContentLoaded', () => {
     guardarEstatisticasFixas(); // guarda as 4 estatísticas
     atualizarDisplaySatisfacao(); // função já existente, não será anulada
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    guardarEstatisticasFixas(); 
+    atualizarDisplaySatisfacao(); 
+
+    // Cálculo automático de Ocorrências em Análise
+    const reportadas = parseInt(localStorage.getItem('ocorrencias_reportadas')?.replace(/\./g, '')) || 0;
+    const resolvidas = parseInt(localStorage.getItem('ocorrencias_resolvidas')?.replace(/\./g, '')) || 0;
+
+    const emAnalise = reportadas - resolvidas;
+
+    localStorage.setItem('ocorrencias_em_analise', emAnalise);
+
+    const box = document.querySelector('#box-em-analise h3');
+    if (box) box.textContent = emAnalise;
   });
 </script>
 
