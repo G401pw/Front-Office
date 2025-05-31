@@ -37,8 +37,7 @@ nav ul {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0;
-    justify-content: center; /* Alinha os links ao centro */
+    padding: 0;  
 }
 
 nav ul li {
