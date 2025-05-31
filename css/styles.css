@@ -67,7 +67,7 @@ nav ul li a {
 .auth-links {
     display: flex;
     gap: 15px;
-    color: black; /* Cor ajustada para preto */
+    color: white; /* Cor ajustada para preto */
     font-weight: bold;
     margin-left: auto; /* Garante que os links vão para a direita */
     justify-content: flex-end; /* Garante que a área de login/cadastro esteja à direita */
@@ -79,7 +79,7 @@ nav ul li a {
 
 .auth-links a {
     text-decoration: none;
-    color: black; /* Cor ajustada para preto */
+    color: white; /* Cor ajustada para preto */
     font-weight: bold;
 }
 
