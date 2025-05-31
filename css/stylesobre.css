@@ -23,6 +23,7 @@ header {
     background: white;
     padding: 15px 50px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 110px;
 }
 
 .logo {
@@ -32,6 +33,7 @@ header {
 }
 
 .logo img {
+    margin-top: 5px;
     height: 80px;
     margin-right: 10px;
 }
@@ -177,3 +179,26 @@ body::before {
   border-radius: 50%;
   padding: 2px 6px;
 }
+
+nav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+
+nav ul li {
+  margin: 0 15px !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+nav ul li a {
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+
+
