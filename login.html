@@ -42,6 +42,17 @@
     </div>
 
     <script>
+        // Lista de emails autorizados a fazer login com Google
+        const emailAutorizado = [
+            "ljvieirafernandes@gmail.com",
+            "edunas04@gmail.com",
+            "joaninharibeiro2004@gmail.com",
+            "gpiaia@hotmail.com",
+            "franciscaribeiro200@gmail.com",
+            "raquel.pereira.cardoso@gmail.com"
+        ];
+
+        
         // Valida se o email e password correspondem a um utilizador guardado no localStorage
         function validarLogin(email, password) {
             const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -81,9 +92,10 @@
             const nomeGoogle = data.name;
 
             if (emailAutorizado.includes(emailGoogle)) {
-                showFeedbackMessage(`Bem-vindo, ${data.name}!`, 'success');
+                showFeedbackMessage(`Bem-vindo, ${nomeGoogle}!`, 'success');
                 localStorage.setItem("userName", nomeGoogle);
                 localStorage.setItem("userEmail", emailGoogle);
+
                 setTimeout(() => {
                     const destino = localStorage.getItem("redirectAfterLogin");
                     if (destino) {
@@ -94,9 +106,10 @@
                     }
                 }, 2000);
             } else {
-                showFeedbackMessage("Este email não está autorizado a fazer login.", 'error');
+                showFeedbackMessage("Este email não está autorizado a fazer login com Google.", 'error');
             }
         }
+
 
         window.onload = function () {
             google.accounts.id.initialize({
